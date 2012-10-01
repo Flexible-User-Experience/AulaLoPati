@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link href="{{ asset('/bundles/blog/css/reset.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('/bundles/blog/css/estil.css') }}" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    
+    
+    <body>
+    <div id="main">
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        <div id="prova">
+			      		  <div id="menu">
+				        <ul>
+				        <li>presentació</li>
+				        <li>jornades</li>
+				        <li>trobades</li>
+				        <li>contacte</li>
+				        <li>publicacions</li>
+				        </ul>
+				        </div>
+				        
+				        <div id="content">
+				        <p>hol</p>
+				        
+				        </div>
+        </div>
+        {% block content %}{% endblock %}
+        
+        <div id="footer">
+       		<ul>
+		       	<li>
+		       		<p>organitza:</p>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/logo_LoPati.jpg"alt="logotip lo pati" title="logotip lo pati"></a>
+		       	</li>
+		       	<li>
+		       		<p>col·labora</p>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/gencat_ensenyament.jpg" alt="logotip departament ensenyament" title="logotip departament ensenyament gencat"></a>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/acvic.jpg"  alt="logotip departament ensenyament" title="logotip departament ensenyament gencat"></a>
+		       				
+		       	</li>
+		       	<li>
+		       		<p>amb el suport de:</p>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/ajuntament-amposta.jpg"  alt="logotip ajuntament amposta" title="ajuntament amposta"></a>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/gencat_cultura.jpg" alt="logotip departament cultura" title="logotip departament cultura gencat"></a>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/diputacio_tarragona.jpg"  alt="logotip diputacio tarragona" title="logotip diputacio tarragona"></a>
+		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/logo-museu-terres-ebre.png" alt="logotip museu terres ebre" title="logotip museu terres ebre"></a>
+		       		
+		       	</li>
+     	  </ul>
+       
+       </div>
+  </div>
+        
+        
+
+    </body>
+</html>

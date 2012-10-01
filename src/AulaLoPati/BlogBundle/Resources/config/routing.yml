@@ -1,0 +1,3 @@
+presentacio:
+    pattern:  /
+    defaults: { _controller: BlogBundle:Default:presentacio }
