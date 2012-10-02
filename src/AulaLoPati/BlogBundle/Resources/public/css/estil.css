@@ -4,29 +4,27 @@ background-image:url('/images/logo_AulaLoPati.jpg');
 background-color:#FFF;
 background-repeat:no-repeat;
 width:960px;
-
-	
+margin-top:270px;
+color:#666;	
 }
-#main{
-
-	width:960px;
-	height: 1000px;
-
-	
+a{
+	color:#1D6880;
+	text-decoration:none;
 }
-#prova{
-	display:block;
-	float:left;
-	
+p{
+	margin: 10px 0;
+	font-size:0.9em;
+	line-height:1.1em;;
 }
 #menu{
 
 	width:245px;
-	height:300px;
+	
 	text-align:right;
 	color:#1D6880;
 	font-weight:bold;
 	float:left;
+	margin-bottom:35px;
 	
 }
 #menu ul li{
@@ -38,22 +36,25 @@ width:960px;
 
 
 #content{
-	margin-left:100px;
+		margin-left:100px;
 		float:left;
 		width:615px;
-		height:600px;
-	
+		margin-bottom: 35px;
+		
 	
 }
 #footer{
-	position:relative;
+
 	border-top-style:solid;
-	border-width:medium;
+	border-width:1px;
+	border-color: #CDCDCD;
 	width:960px;
 	height:300px;
+	clear:both;
 }
 #footer ul{
-margin-left:150px;
+margin-left:279px;
+margin-top:35px;
 }
 #footer ul li{
 	margin: 0 20px;
@@ -63,6 +64,7 @@ margin-left:150px;
 	
 }
 #footer ul li p{
+	font-size:0.9em;
 margin-bottom:20px;
 	
 	
@@ -75,5 +77,9 @@ float:left;
 }
 #footer ul li img{
 width:70px;
+	
+}
+.actiu{
+	color: #666;
 	
 }

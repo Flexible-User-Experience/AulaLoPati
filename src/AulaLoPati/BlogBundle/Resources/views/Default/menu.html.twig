@@ -1,0 +1,45 @@
+<div id="menu">
+	<ul>
+	{% if menu=='presentacio' %}
+	<li ><a class="actiu" href="{{ path('presentacio') }}">presentació</a>	</li>
+	{% else %}
+	<li><a href="{{ path('presentacio') }}">presentació</a>	</li>
+	{% endif %}
+	
+	{% if menu=='jornades' %}
+		<li ><a href="{{ path('jornades') }}" class="actiu">jornades</a></li>
+		{% else %}
+		<li><a href="{{ path('jornades') }}">jornades</a></li>
+			{% endif %}
+	
+	{% if menu=='ponencies' %}
+		<li ><a href="{{ path('ponencies') }}" class="actiu">ponències</a></li>
+	{% else %}
+		<li><a href="{{ path('ponencies') }}">ponències</a></li>
+	{% endif %}
+	
+	
+	{% if menu=='trobades' %}
+		<li class="actiu"><a href="{{ path('trobades') }}" class="actiu">trobades</a></li>
+	{% else %}
+		<li class="actiu"><a href="{{ path('trobades') }}" >trobades</a></li>
+	{% endif %}
+	
+	{% if menu=='contacte' %}
+		<li class="actiu">contacte</li>
+	{% else %}
+		<li>contacte</li>
+	{% endif %}
+	
+	{% if menu=='publicacions' %}
+		<li class="actiu"><a href="{{ path('publicacions') }}" class="actiu">publicacions</a></li>
+	{% else %}
+		<li class="actiu"><a href="{{ path('publicacions') }}" >publicacions</a></li>
+	{% endif %}
+
+		
+		
+		
+		
+	</ul>
+</div>

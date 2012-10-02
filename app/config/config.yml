@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: %locale% }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -57,3 +57,131 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+# Sonata Admin Bundle             
+sonata_admin:
+  title:  'Administrador de continguts'
+  title_logo: /images/logo_lopati_inverted.png
+  templates:
+    layout: BlogBundle:Admin:my_standard_layout.html.twig
+    dashboard: SonataAdminBundle:Core:dashboard.html.twig
+    ajax: SonataAdminBundle::ajax_layout.html.twig
+    list: SonataAdminBundle:CRUD:list.html.twig
+    show: SonataAdminBundle:CRUD:show.html.twig
+    edit: SonataAdminBundle:CRUD:edit.html.twig
+  dashboard:  
+    groups:
+        Jornades:
+
+
+# Sonata Block Bundle
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
+   
+vich_uploader:
+    db_driver: orm
+    mappings:
+        imatge:
+            uri_prefix: /uploads/images
+            upload_destination: %kernel.root_dir%/../web/uploads/images
+            inject_on_load: false
+            delete_on_remove: true
+            
+        pdf:
+            uri_prefix: /uploads/documents
+            upload_destination: %kernel.root_dir%/../web/uploads/documents
+            inject_on_load: false
+            delete_on_remove: true
+# TinyMCE Bundle 
+stfalcon_tinymce:
+    include_jquery: false
+    tinymce_jquery: true
+    textarea_class: "tinymce"
+    language: ca
+    theme:
+        simple:
+            mode: "textareas"
+            theme: "advanced"
+            theme_advanced_buttons1: "mylistbox,mysplitbutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink,forecolor,backcolor"
+            theme_advanced_buttons2: "outdent,indent,code"
+            theme_advanced_buttons3: ""
+            theme_advanced_toolbar_location: "top"
+            theme_advanced_toolbar_align: "left"
+            theme_advanced_statusbar_location: "bottom"
+            plugins: "fullscreen"
+            theme_advanced_buttons1_add: "fullscreen"
+        advanced:
+            theme: "advanced"
+            plugins: "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template"
+            theme_advanced_buttons1: "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect"
+            theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor"
+            theme_advanced_buttons3: "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen"
+            theme_advanced_buttons4: "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak"
+            theme_advanced_toolbar_location: "top"
+            theme_advanced_toolbar_align: "left"
+            theme_advanced_statusbar_location: "bottom"
+            theme_advanced_resizing: true
+        medium:
+            mode: "textareas"
+            theme: "advanced"
+            plugins: "table,advhr,advlink,paste,xhtmlxtras,spellchecker"
+            theme_advanced_buttons1: "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,forecolor,backcolor,|,hr,removeformat,|,sub,sup,|,spellchecker"
+            theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,bullist,numlist,|,undo,redo,|,link,unlink,anchor,cleanup,code,|,tablecontrols"
+            theme_advanced_buttons3: ""
+            theme_advanced_toolbar_location: "top"
+            theme_advanced_toolbar_align: "left"
+            theme_advanced_statusbar_location: ""
+            paste_auto_cleanup_on_paste: true
+            spellchecker_languages: "+English=en,Dutch=nl"
+            width: "600"
+        bbcode:
+            mode: "none"
+            theme: "advanced"
+            plugins: "bbcode"
+            theme_advanced_buttons1: "bold,italic,underline,undo,redo,link,unlink,image,forecolor,styleselect,removeformat,cleanup,code"
+            theme_advanced_buttons2: ""
+            theme_advanced_buttons3: ""
+            theme_advanced_toolbar_location: "bottom"
+            theme_advanced_toolbar_align: "center"
+            theme_advanced_styles: "Code=codeStyle;Quote=quoteStyle"
+            entity_encoding: "raw"
+            add_unload_trigger: false
+            remove_linebreaks: false
+            inline_styles: false
+            convert_fonts_to_spans: false 
+            
+# Liip Imagine Bundle            
+liip_imagine:
+    cache_prefix:         /uploads/cache
+    filter_sets:
+        imatge_pagina:
+            quality: 90
+            filters:
+                thumbnail: { size: [710,null], mode: outbound }
+                
+        portada:
+            quality: 90
+            filters:
+                thumbnail: { size: [155,155], mode: outbound }
+                
+                
+        thumb_imatge_pagina:
+            quality: 70
+            filters:
+                thumbnail: { size: [155,null], mode: outbound }
+
+        thumb_imatge_pagina_arbre_continguts:
+            quality: 70
+            filters:
+                thumbnail: { size: [50,null], mode: outbound }
+     
+        imatge_pagina_newsletter:
+            quality: 80
+            filters:
+                thumbnail: { size: [578,null], mode: outbound }

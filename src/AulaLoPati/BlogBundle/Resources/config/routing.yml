@@ -1,3 +1,23 @@
-presentacio:
+inici:
     pattern:  /
+    defaults: { _controller: BlogBundle:Default:inici }
+
+presentacio:
+    pattern:  /presentacio/
     defaults: { _controller: BlogBundle:Default:presentacio }
+
+ponencies:
+    pattern:  /ponencies/
+    defaults: { _controller: BlogBundle:Default:ponencies }
+    
+trobades:
+    pattern:  /trobades/
+    defaults: { _controller: BlogBundle:Default:trobades }
+    
+publicacions:
+    pattern:  /publicacions/
+    defaults: { _controller: BlogBundle:Default:publicacions }
+
+jornades:
+    pattern:  /jornades/
+    defaults: { _controller: BlogBundle:Default:llistaJornades }

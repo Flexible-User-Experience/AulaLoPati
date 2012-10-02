@@ -1,10 +1,19 @@
 {% extends '::layout.html.twig' %}
 
-
-
- {% block body %}
- 
-
+{% block title %}Presentació{% endblock %}
+{% block menu %}
+{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'presentacio'} %}
+{% endblock %}
+ {% block content %}
+ <p>
+El Centre d’Art de les Terres de l’Ebre rep el nom del lloc on està ubicat, el pati de les antigues escoles públiques d’Amposta. El pati és,
+dins l’espai regulat de l’escola, el lloc i el moment del lleure, del joc, de la conversa i de les relacions. Des de l’enfocament tradicional
+dominant, totes aquestes activitats només són lúdiques, un parèntesi en l’activitat escolar. Però també hi ha altres tradicions (per exemple,
+l’escola activa) que en reconeixen el seu paper socialitzador i educatiu. Vet aquí que aquesta relació fortuïta entre el Centre d’Art de les Terres de l'Ebre i un pati d'escola ens serveix de leitmotiv t'un projecte que no es defineix ni com artístic ni com a educatiu, sinó més aviat com allò que emergeix en la seva intersecció.</p>
+<p>
+L’aula al pati es un projecte d’intercanvi i col·laboració entre Lo Pati i els centres i espais educatius i formatius formals, no-formals i
+informals de les Terres de l’Ebre. El propòsit és possibilitar l’encontre entre persones i institucions que, malgrat operar en un mateix context, sovint s'ha considerat en esferes separades. Les estratègies d'aproximació i participació es definiran a través d'un procès que ara engeguem amb aquestes jornades de formació.
+</p>
  
  {% endblock %}
 

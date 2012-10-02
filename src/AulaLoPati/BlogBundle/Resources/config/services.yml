@@ -1,7 +1,17 @@
-parameters:
-#    blog.example.class: AulaLoPati\BlogBundle\Example
-
 services:
-#    blog.example:
-#        class: %blog.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+        
+  sonata.aulalopati.admin.pagina:
+    class: AulaLoPati\BlogBundle\Admin\JornadaAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: 'Jornades', label: jornada }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Jornada
+      - BlogBundle:Admin
+  
+
+      
+
+      
+ 

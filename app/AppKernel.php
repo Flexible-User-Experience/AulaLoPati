@@ -19,6 +19,16 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+        	
+        	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+        	new Sonata\BlockBundle\SonataBlockBundle(),
+        	new Sonata\CacheBundle\SonataCacheBundle(),
+        	new Sonata\jQueryBundle\SonatajQueryBundle(),
+        	new Sonata\AdminBundle\SonataAdminBundle(),
+        	new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+        	new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+        	new Vich\UploaderBundle\VichUploaderBundle(),
+        	new Liip\ImagineBundle\LiipImagineBundle(),
         		
         		
         		
