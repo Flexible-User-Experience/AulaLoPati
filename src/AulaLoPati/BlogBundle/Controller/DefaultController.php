@@ -16,14 +16,14 @@ class DefaultController extends Controller
         return $this->render('BlogBundle:Default:presentacio.html.twig');
     }
     
-	public function ponenciesAction(){
+	public function projectesAction(){
 		
-		return $this->render('BlogBundle:Default:ponencies.html.twig');
+		return $this->render('BlogBundle:Default:projectes.html.twig');
 		
 	}
-	public function trobadesAction(){
+	public function arxiuAction(){
 	
-		return $this->render('BlogBundle:Default:trobades.html.twig');
+		return $this->render('BlogBundle:Default:arxiu.html.twig');
 	
 	}
 	public function publicacionsAction(){
@@ -37,6 +37,18 @@ class DefaultController extends Controller
 		$jornades= $em->getRepository('BlogBundle:Jornada')->findJornades();
 		
 		return $this->render('BlogBundle:Default:llistaJornades.html.twig', array('jornades'=>$jornades));
+	
+	}
+	
+	public function enllasosAction(){
+	
+		return $this->render('BlogBundle:Default:enllasos.html.twig');
+	
+	}
+	
+	public function contacteAction(){
+	
+		return $this->render('BlogBundle:Default:contacte.html.twig');
 	
 	}
 }

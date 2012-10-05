@@ -7,6 +7,7 @@ width:960px;
 margin-top:270px;
 color:#666;	
 }
+
 a{
 	color:#1D6880;
 	text-decoration:none;
@@ -81,5 +82,45 @@ width:70px;
 }
 .actiu{
 	color: #666;
+	
+}
+.separador{
+	width:100%;
+	margin: 25px 0;
+	clear:both;
+	border-top-style:solid;
+	border-width:1px;
+	color:#CDCDCD;
+	
+}
+
+.separador_lloc{
+	width:100%;
+	margin: 15px 0;
+	clear:both;
+	border-bottom-style:solid;
+	border-width:1px;
+	border-color:#CDCDCD;
+	text-align:right;
+	color:#1D6880;
+	padding: 5px 0;
+	font-size:0.9em;
+	
+}
+strong, b {
+font-weight: bold;
+}
+.titol_jornada{
+	font-size:1.2em;
+	color:#1D6880;
+	font-weight: bold;
+	margin-bottom:15px;
+	
+}
+.titol_jornada p{
+	margin:0;
+}
+.descripcio p{
+	margin:0;
 	
 }

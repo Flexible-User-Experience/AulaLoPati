@@ -1,10 +1,35 @@
 {% extends '::layout.html.twig' %}
 
-{% block title %}Ponències{% endblock %}
+{% block title %}Jornades{% endblock %}
 {% block menu %}
 {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'jornades'} %}
 {% endblock %}
  {% block content %}
-<p>en construcció</p>
+ 
+
+<div id="jornades">
+	{% for jornada in jornades %}
+	
+			<h2 class="titol_jornada">{{ jornada.titol|raw }}</h2>
+			
+			<div class="descripcio">
+			{{ jornada.descripcio|raw }}
+			
+			</div>
+			{% if jornada.dataRealitzacio is not null %}
+			
+			<div class="separador_lloc">
+			{{ jornada.dataRealitzacio }}
+			</div>
+			
+			
+			{% else %}
+			
+			<div class="separador"></div>
+			
+			{% endif %}
+	{% endfor %}
+
+</div>
 
 {% endblock %}

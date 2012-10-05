@@ -12,31 +12,37 @@
 		<li><a href="{{ path('jornades') }}">jornades</a></li>
 			{% endif %}
 	
-	{% if menu=='ponencies' %}
-		<li ><a href="{{ path('ponencies') }}" class="actiu">ponències</a></li>
+	{% if menu=='projectes' %}
+		<li ><a href="{{ path('projectes') }}" class="actiu">projectes</a></li>
 	{% else %}
-		<li><a href="{{ path('ponencies') }}">ponències</a></li>
+		<li><a href="{{ path('projectes') }}">projectes</a></li>
 	{% endif %}
 	
 	
-	{% if menu=='trobades' %}
-		<li class="actiu"><a href="{{ path('trobades') }}" class="actiu">trobades</a></li>
+	{% if menu=='arxiu' %}
+		<li class="actiu"><a href="{{ path('arxiu') }}" class="actiu">arxiu</a></li>
 	{% else %}
-		<li class="actiu"><a href="{{ path('trobades') }}" >trobades</a></li>
-	{% endif %}
-	
-	{% if menu=='contacte' %}
-		<li class="actiu">contacte</li>
-	{% else %}
-		<li>contacte</li>
+		<li class="actiu"><a href="{{ path('arxiu') }}" >arxiu</a></li>
 	{% endif %}
 	
 	{% if menu=='publicacions' %}
-		<li class="actiu"><a href="{{ path('publicacions') }}" class="actiu">publicacions</a></li>
+		<li><a href="{{ path('publicacions') }}" class="actiu">publicacions</a></li>
 	{% else %}
 		<li class="actiu"><a href="{{ path('publicacions') }}" >publicacions</a></li>
 	{% endif %}
+	
+	{% if menu=='contacte' %}
+		<li><a href="{{ path('contacte') }}" class="actiu">contacte</a></li>
+	{% else %}
+		<li><a href="{{ path('contacte') }}" >contacte</a></li>
+	{% endif %}
+	
 
+	{% if menu=='enllasos' %}
+		<li><a href="{{ path('enllasos') }}" class="actiu">enllaços</a></li>
+	{% else %}
+		<li><a href="{{ path('enllasos') }}" >enllaços</a></li>
+	{% endif %}
 		
 		
 		

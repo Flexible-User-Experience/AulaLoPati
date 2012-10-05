@@ -6,14 +6,10 @@ presentacio:
     pattern:  /presentacio/
     defaults: { _controller: BlogBundle:Default:presentacio }
 
-ponencies:
-    pattern:  /ponencies/
-    defaults: { _controller: BlogBundle:Default:ponencies }
-    
-trobades:
-    pattern:  /trobades/
-    defaults: { _controller: BlogBundle:Default:trobades }
-    
+projectes:
+    pattern:  /projectes/
+    defaults: { _controller: BlogBundle:Default:projectes }
+     
 publicacions:
     pattern:  /publicacions/
     defaults: { _controller: BlogBundle:Default:publicacions }
@@ -21,3 +17,15 @@ publicacions:
 jornades:
     pattern:  /jornades/
     defaults: { _controller: BlogBundle:Default:llistaJornades }
+    
+arxiu:
+    pattern:  /arxiu/
+    defaults: { _controller: BlogBundle:Default:arxiu }
+
+contacte:
+    pattern:  /contacte/
+    defaults: { _controller: BlogBundle:Default:contacte }
+    
+enllasos:
+    pattern:  /enllaços/
+    defaults: { _controller: BlogBundle:Default:enllasos }
