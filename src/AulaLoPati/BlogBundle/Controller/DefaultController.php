@@ -3,6 +3,11 @@
 namespace AulaLoPati\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AulaLoPati\BlogBundle\Form\ContactType;
+
+use Symfony\Component\HttpFoundation\Request;
+
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -51,9 +56,29 @@ class DefaultController extends Controller
 	
 	}
 	
-	public function contacteAction(){
-	
-		return $this->render('BlogBundle:Default:contacte.html.twig');
+	public function contacteAction(Request $request){
+		
+		$form = $this->createForm(new ContactType());
+		
+		if ($request->getMethod() == 'POST') {
+			$form->bindRequest($request);
+		
+			if ($form->isValid()) {
+				$data = $form->getData();
+
+				$message = \Swift_Message::newInstance()
+				->setSubject($data['topic'])
+				->setFrom(array($data['email'] => $data['name']))
+				->setTo($this->container->getParameter('aulalopati.mail'))
+				->setBody($data['message'])
+				;
+				$this->get('mailer')->send($message);
+				$this->get('session')->setFlash('notice', 'Gràcies per contactar amb nosaltres, ens posarem amb contacte el més aviat possible.');
+				return $this->redirect($this->generateUrl('contacte'));
+			}
+		}
+
+		return $this->render('BlogBundle:Default:contacte.html.twig',array('form' => $form->createView()));
 	
 	}
 }

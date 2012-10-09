@@ -5,6 +5,24 @@
 {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'contacte'} %}
 {% endblock %}
  {% block content %}
-<p>en construcció</p>
+ 		{% if app.session.hasFlash('notice') %}
+        <div class="flash success">{{ app.session.flash('notice') }}</div>
+    {% endif %}	     
+<div class="span-6 last">
+    <div class="post-content">
+        <h2>Contacta amb nosaltres:</h2>
+        <form action="{{ path('contacte') }}" method="post" class="contact-form">
+            {{ form_row(form.name, { 'label': 'nom'}) }}
+            {{ form_row(form.email, { 'label': 'correu electrònic' }) }}
+            {{ form_row(form.topic, { 'label': 'assumpte' }) }}
+            {{ form_row(form.message, { 'label': 'missatge' }) }}            
+            <div class="captcha">
+{#                 {{ form_label(form.captcha) }}#}
+{#                 {{ form_widget(form.captcha) }}#}
+            </div>            
+            {{ form_row(form._token) }}
+            <button type="submit">enviar</button>
+        </form>
+</div></div>
 
 {% endblock %}

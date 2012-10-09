@@ -139,3 +139,56 @@ font-weight: bold;
 	text-align:right;
 	
 }
+
+.post-content {
+	margin-left:80px;
+  padding: 0px 10px 10px;
+}
+
+.post-content h2 {
+
+  
+  	font-size:1.2em;
+	color:#1D6880;
+	font-weight: bold;
+	margin-bottom:15px;
+}
+
+
+.contact-form label {
+  display: block;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 340px;
+}
+
+.contact-form input {
+  height: 18px;
+  margin: 5px 0;
+}
+
+.contact-form textarea {
+  height: 100px;
+  margin-top: 5px;
+}
+
+.contact-form .captcha {
+  margin-bottom: 10px;
+}
+
+.contact-form .captcha input {
+  width: 230px;
+  margin: 0 10px 0 0;
+}
+
+.contact-form .captcha img {
+  vertical-align: bottom;
+}
+.success{
+	background-color: #9BA7CC;
+	padding: 3px 0;
+	text-align:center;
+	margin-bottom: 20px;
+	
+}

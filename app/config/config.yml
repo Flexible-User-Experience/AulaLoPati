@@ -1,6 +1,8 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+parameters:
+    aulalopati.mail: 'comunicacio@aulalopati.cat'
 
 framework:
     #esi:             ~
@@ -45,18 +47,19 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
+        types:
+            json: Sonata\Doctrine\Types\JsonType
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+        mappings:
+            ApplicationSonataUserBundle: ~
+            SonataUserBundle: ~
+            FOSUserBundle: ~ 
 
 # Swiftmailer Configuration
-swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    spool:     { type: memory }
+
 # Sonata Admin Bundle             
 sonata_admin:
   title:  "Administrador de continguts - L'Aula Lo Pati"
@@ -83,7 +86,31 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
-   
+
+# Sonata FOS User Bundle
+sonata_user:
+    security_acl: true
+    class:                  # Entity Classes
+            user:               Application\Sonata\UserBundle\Entity\User
+            group:              Application\Sonata\UserBundle\Entity\Group
+    admin:                  # Admin Classes
+            user:
+                class:          Sonata\UserBundle\Admin\Entity\UserAdmin
+                controller:     SonataAdminBundle:CRUD
+                translation:    SonataUserBundle
+            group:           
+                class:          Sonata\UserBundle\Admin\Entity\GroupAdmin
+                controller:     SonataAdminBundle:CRUD
+                translation:    SonataUserBundle
+
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  main
+    user_class:     Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class: Application\Sonata\UserBundle\Entity\Group
+
 vich_uploader:
     db_driver: orm
     mappings:
