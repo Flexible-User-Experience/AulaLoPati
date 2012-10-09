@@ -39,7 +39,12 @@ class DefaultController extends Controller
 		return $this->render('BlogBundle:Default:llistaJornades.html.twig', array('jornades'=>$jornades));
 	
 	}
+	public function jornadaAction($titol){
+		$em = $this->getDoctrine()->getEntityManager();
+		$jornada = $em->getRepository('BlogBundle:Jornada')->findOneBy(array('slug'=>$titol));
+		return $this->render('BlogBundle:Default:jornada.html.twig',array('jornada'=>$jornada));
 	
+	}
 	public function enllasosAction(){
 	
 		return $this->render('BlogBundle:Default:enllasos.html.twig');

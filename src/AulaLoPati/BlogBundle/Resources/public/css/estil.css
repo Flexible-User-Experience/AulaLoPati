@@ -80,6 +80,10 @@ float:left;
 width:70px;
 	
 }
+#jornades{
+	margin-top:10px;
+	
+}
 .actiu{
 	color: #666;
 	
@@ -95,7 +99,9 @@ width:70px;
 }
 
 .separador_lloc{
-	width:100%;
+	position:relative;
+
+	width:auto;
 	margin: 15px 0;
 	clear:both;
 	border-bottom-style:solid;
@@ -103,8 +109,12 @@ width:70px;
 	border-color:#CDCDCD;
 	text-align:right;
 	color:#1D6880;
-	padding: 5px 0;
+	padding: 10px 0;
 	font-size:0.9em;
+	background-image:url('/images/diagonal.jpg');
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	background-position:300px 0px;
 	
 }
 strong, b {
@@ -122,5 +132,10 @@ font-weight: bold;
 }
 .descripcio p{
 	margin:0;
+	
+}
+.peu_foto{
+	margin-top:0px;
+	text-align:right;
 	
 }

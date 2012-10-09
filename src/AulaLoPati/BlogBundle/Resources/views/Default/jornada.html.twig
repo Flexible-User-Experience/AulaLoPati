@@ -1,0 +1,27 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Jornades : {{jornada |striptags}}{% endblock %}
+{% block menu %}
+{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'jornades'} %}
+{% endblock %}
+ {% block content %}
+ 
+
+<div id="jornades">
+
+			{% if jornada.imageGran1Name  %}
+				<img src='{{ vich_uploader_asset(jornada, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : Jornada {{ jornada.titol }}"/>
+			
+			{% endif %}
+			<p class="peu_foto">{{ jornada.peuImageGran1 }} </p>
+			
+			<h2 class="titol_jornada">{{ jornada.titol }}</h2>
+			
+			<div class="descripcio">
+			{{ jornada.descripcio|raw }}
+			
+			</div>
+
+</div>
+
+{% endblock %}

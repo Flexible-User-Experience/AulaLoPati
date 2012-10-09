@@ -31,11 +31,18 @@ class Jornada {
 	protected $tipus;
 
 	/** 
-	 * @ORM\Column(type="text") 
+	 * @ORM\Column(type="string", length=255) 
 	 * 
 	 */
 	protected $titol;
-
+	
+	/**
+	 * @ORM\Column(type="text",nullable=true)
+	 *
+	 */
+	protected $slug;
+	
+	
 	/** 
 	 * @ORM\Column(type="string", length=300, nullable=true) 
 	 *
@@ -351,11 +358,10 @@ class Jornada {
 		$this->imagePetita2Name=$filename;
 	}
 	public function __construct() {
+		
 	}
 	
-	public function getSlug() {
-		return Util::getSlug($this->titol);
-	}
+
 	
 	/**
 	 * Set translations
@@ -421,6 +427,8 @@ class Jornada {
 	 */
 	public function setTitol($titol) {
 		$this->titol = $titol;
+		$this->slug=Util::getSlug($this->titol);
+		
 	}
 
 	/**
@@ -431,6 +439,25 @@ class Jornada {
 	public function getTitol() {
 		return $this->titol;
 	}
+	
+	
+	
+	public function setSlug($titol) {
+		
+		$this->slug=$titol;
+		
+	
+	}
+	
+	/**
+	 * Get titol
+	 *
+	 * @return string
+	 */
+	public function getSlug() {
+		return $this->slug;
+	}
+	
 
 	/**
 	 * Set resum

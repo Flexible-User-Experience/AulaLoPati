@@ -4,6 +4,9 @@ namespace AulaLoPati\BlogBundle\Util;
 class Util {
 	static public function getSlug($cadena, $separador = '-') {
 		// reemplaça vocals amb accents per vocals sense accent
+		
+		
+		
 		$cadena = str_replace('À', 'A', $cadena);
 		$cadena = str_replace('Á', 'A', $cadena);
 		$cadena = str_replace('Ä', 'A', $cadena);
@@ -50,8 +53,13 @@ class Util {
 		$cadena = str_replace('Ñ', 'NY', $cadena);
 		$cadena = str_replace('ñ', 'ny', $cadena);
 		$cadena = str_replace('\'', '-', $cadena);
+		
+		//$cadena= str_replace('</p>', '-', $cadena);
+		//$cadena=strip_tags($cadena);
+		
 		// Código copiado de http://cubiq.org/the-perfect-php-clean-url-generator
 		$slug = iconv('UTF-8', 'ASCII//TRANSLIT', $cadena);
+
 		$slug = preg_replace("/[^a-zA-Z0-9\/_|+ -]/", '', $slug);
 		$slug = strtolower(trim($slug, $separador));
 		$slug = preg_replace("/[\/_|+ -]+/", $separador, $slug);

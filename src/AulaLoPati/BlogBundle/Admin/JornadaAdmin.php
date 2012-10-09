@@ -19,9 +19,7 @@ class JornadaAdmin extends Admin
 	{
 		$formMapper
 		
-		->add('titol', 'textarea', array('attr' => array('class' => 'tinymce',
-				 'data-theme'=>'simple',
-				'style' => 'width: 600px; height: 400px;'),'label' => 'Títol'))
+		->add('titol', null, array('label' => 'Títol'))
 		->add('resum', 'textarea', array('label' => 'Resum','required'  => false, 'attr'=>(array('style'=>'height:90px;'))))
 		->add('descripcio', 'textarea', array('attr' => array('class' => 'tinymce',
 				 'data-theme'=>'simple',
@@ -78,12 +76,13 @@ class JornadaAdmin extends Admin
 		//->add('urlVimeo',null, array('required'=> FALSE, 'label'=> 'URL video Vimeo'))
 		//->add('urlFlickr',null, array('required'=> FALSE,'label'=> 'URL galeria Flickr'))
 		
-
+				->setHelps(array('titol'=>'Camp únic, no es pot repetir.'))
 				->setHelps(array('tipus'=>'tria el tipus'))
 				->setHelps(array('compartir'=>'Mostrar botos per compartir xarxes socials'))
 				->setHelps(array('urlVimeo'=>'Ex: https://vimeo.com/38489316'))
 				->setHelps(array('urlFlickr'=>'Ex: http://www.flickr.com/photos/lopati/..'))
 				->setHelps(array('resum'=>'Max: 300 caràcters'))
+		
 		->setHelps(array('data_publicacio'=>'Format: dd-MM-yyyy'))
 		->setHelps(array('data_caducitat'=>'Data fins quan sera visible la pàgina -> Automaticament serà Arxiu. Deixar en blanc per no caducar. Format: dd-MM-yyyy '))
 		;
