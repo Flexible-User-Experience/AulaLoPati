@@ -59,7 +59,7 @@ swiftmailer:
     spool:     { type: memory }
 # Sonata Admin Bundle             
 sonata_admin:
-  title:  'Administrador de continguts'
+  title:  "Administrador de continguts - L'Aula Lo Pati"
   title_logo: /images/logo_lopati_inverted.png
   templates:
     layout: BlogBundle:Admin:my_standard_layout.html.twig
