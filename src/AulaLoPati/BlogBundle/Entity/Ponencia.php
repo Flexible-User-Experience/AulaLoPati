@@ -13,12 +13,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
- * @ORM\Entity(repositoryClass="AulaLoPati\BlogBundle\Repository\JornadaRepository")
+ * @ORM\Entity(repositoryClass="AulaLoPati\BlogBundle\Repository\PonenciaRepository")
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity("titol")
  * @Vich\Uploadable
  */
-class Jornada {
+class Ponencia {
 
 	/**
 	 * @ORM\Id
@@ -26,17 +26,16 @@ class Jornada {
 	 * @ORM\GeneratedValue
 	 */
 	protected $id;
-	
-	
-	/**
-	 * @ORM\OneToMany(targetEntity="AulaLoPati\BlogBundle\Entity\Ponencia", mappedBy="ponencia", cascade={"persist", "remove"} )
-	 * @ORM\OrderBy({"actiu" = "DESC", "ordre" = "ASC"})
-	 */
-	protected $ponencies;
-	
+
 	/** @ORM\Column(type="string", length=50, nullable=true) */
 	protected $tipus;
-
+	
+	/** @ORM\ManyToOne(targetEntity="Jornada", inversedBy="jornada") */
+	protected $jornada;
+	
+	/** @ORM\ManyToOne(targetEntity="Categoria", inversedBy="ponencia") */
+	protected $categoria;
+	
 	/** 
 	 * @ORM\Column(type="string", length=255) 
 	 * 
@@ -49,9 +48,13 @@ class Jornada {
 	 */
 	protected $slug;
 	
-	
+	/**
+	 * @ORM\Column(type="string", length=80, nullable=true)
+	 *
+	 */
+	protected $autor;
 	/** 
-	 * @ORM\Column(type="text", nullable=false) 
+	 * @ORM\Column(type="string", length=300, nullable=true) 
 	 *
 	 */
 	protected $resum = null;
@@ -365,7 +368,7 @@ class Jornada {
 		$this->imagePetita2Name=$filename;
 	}
 	public function __construct() {
-		$this->ponencies = new \Doctrine\Common\Collections\ArrayCollection();
+		
 	}
 	
 
@@ -676,20 +679,41 @@ class Jornada {
 		return $this->locale;
 	}
 	
-	public function addPonencies(\AulaLoPati\BlogBundle\Entity\Ponencia $ponencies)
+	public function setJornada(\AulaLoPati\BlogBundle\Entity\Jornada $jornada = null)
 	{
-		$this->ponencies[] = $ponencies;
+		$this->jornada = $jornada;
 	}
 	
 
+	public function getJornada()
+	{
+		return $this->jornada;
+	}
+	
+	public function setCategoria(\AulaLoPati\BlogBundle\Entity\Categoria $categoria = null)
+	{
+		$this->categoria = $categoria;
+	}
+	
 
-	public function getPonencies()
+	public function getCategoria()
 	{
-		return $this->ponencies;
+		return $this->categoria;
 	}
-	public function setPonencies($translations)
-	{
-		$this->ponencies = $translations;
-		return $this;
+	
+	
+	public function setAutor($locale) {
+		$this->autor = $locale;
+	
 	}
+	
+	/**
+	 * Get compartir
+	 *
+	 * @return boolean
+	 */
+	public function getAutor() {
+		return $this->autor;
+	}
+
 }

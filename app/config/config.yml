@@ -208,7 +208,3 @@ liip_imagine:
             filters:
                 thumbnail: { size: [50,null], mode: outbound }
      
-        imatge_pagina_newsletter:
-            quality: 80
-            filters:
-                thumbnail: { size: [578,null], mode: outbound }

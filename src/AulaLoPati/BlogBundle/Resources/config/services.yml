@@ -10,8 +10,23 @@ services:
       - AulaLoPati\BlogBundle\Entity\Jornada
       - BlogBundle:Admin
   
-
+  sonata.aulalopati.admin.ponencia:
+    class: AulaLoPati\BlogBundle\Admin\PonenciaAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: 'Jornades', label: ponencia }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Ponencia
+      - BlogBundle:Admin
       
-
+  sonata.aulalopati.admin.categoria:
+    class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: 'Jornades', label: categoria }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Categoria
+      - BlogBundle:Admin
+      
       
  

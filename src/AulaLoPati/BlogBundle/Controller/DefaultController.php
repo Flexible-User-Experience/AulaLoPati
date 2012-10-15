@@ -47,7 +47,10 @@ class DefaultController extends Controller
 	public function jornadaAction($titol){
 		$em = $this->getDoctrine()->getEntityManager();
 		$jornada = $em->getRepository('BlogBundle:Jornada')->findOneBy(array('slug'=>$titol));
-		return $this->render('BlogBundle:Default:jornada.html.twig',array('jornada'=>$jornada));
+		$ponencies= $em->getRepository('BlogBundle:Ponencia')->findPonencies($titol);
+		
+		return $this->render('BlogBundle:Default:jornada.html.twig',array('jornada'=>$jornada,
+				'ponencies'=>$ponencies));
 	
 	}
 	public function enllasosAction(){

@@ -9,11 +9,7 @@
 
 <div id="jornades">
 
-			{% if jornada.imageGran1Name  %}
-				<img src='{{ vich_uploader_asset(jornada, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : Jornada {{ jornada.titol }}"/>
-			
-			{% endif %}
-			<p class="peu_foto">{{ jornada.peuImageGran1 }} </p>
+
 			
 			<h2 class="titol_jornada">{{ jornada.titol }}</h2>
 			
@@ -21,7 +17,42 @@
 			{{ jornada.descripcio|raw }}
 			
 			</div>
-
+			
+			{% if jornada.imageGran1Name  %}
+				<img src='{{ vich_uploader_asset(jornada, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : Jornada {{ jornada.titol }}"/>
+						<p class="peu_foto">{{ jornada.peuImageGran1 }} </p>
+			
+			{% endif %}
+			
+			<div class="separador"></div>
+			
+			{%  for ponencia in ponencies %}
+						{%  if ponencia.imagePetitaName is not null%}
+						<div class="ponencia fondo" style="background-image:  url('{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}')";>
+						{% else %}
+							<div class="ponencia">
+						{% endif %}
+						<div class="categoria"> {{ ponencia.categoria }}</div>
+						<h3 class="titol_ponencia">{{ ponencia.titol }}</h3>
+						
+						<div class="autor"> {{ ponencia.autor}}</div>
+							</div>
+						<div class="descripcio ponencia">{{ ponencia.descripcio | raw}}</div>	
+					
+						{% if ponencia.dataRealitzacio is not null %}
+										
+										<div class="separador_lloc">
+										{{ ponencia.dataRealitzacio }}
+										</div>
+										
+				
+						{% else %}
+						
+										<div class="separador"></div>
+						
+						{% endif %}
+			{% endfor %}
+		
 </div>
 
 {% endblock %}
