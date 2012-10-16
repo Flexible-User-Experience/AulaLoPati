@@ -74,6 +74,7 @@ sonata_admin:
   dashboard:  
     groups:
         Jornades:
+        Enllaços:
 
 
 # Sonata Block Bundle

@@ -29,4 +29,16 @@ services:
       - BlogBundle:Admin
       
       
+  sonata.aulalopati.admin.enllas:
+    class: AulaLoPati\BlogBundle\Admin\EnllasAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: 'Enllaços', label: enllaç }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Enllas
+      - BlogBundle:Admin
+      
+      
+      
+      
  
