@@ -77,13 +77,12 @@ p{
 	clear:both;
 }
 #footer ul{
-margin-left:279px;
-margin-top:35px;
+margin-top:20px;
 }
 #footer ul li{
-	margin: 0 20px;
 	float:left;
 	width:auto;
+	margin: 0 5px;
 	
 	
 }
@@ -93,13 +92,22 @@ margin-bottom:20px;
 	
 	
 }
-#footer ul li a{
-
-margin-right:10px;
-float:left;	
-	
+#footer #organitza{
+	margin-left:345px;
+	width: 80px;
+	float:left;
 }
-#footer ul li img{
+#footer #colabora{
+	margin:0 15px;
+	width: 160px;
+float:left;
+}
+#footer #suport{
+	width: 320px;
+	float:left;
+}
+
+#footer img{
 width:70px;
 	
 }
