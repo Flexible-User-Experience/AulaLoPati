@@ -1,5 +1,5 @@
 {% block form %}
-<link href="{{ asset('bundles/menu/css/menu.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/blog/css/admin.css') }}" rel="stylesheet" type="text/css" />
     {% set url = admin.id(object) ? 'edit' : 'create' %}
 
     {% if not admin.hasRoute(url)%}
