@@ -57,7 +57,9 @@ p{
 	margin: 10px 0;
 	
 }
-
+#menu ul li a:hover{
+	color: #666;
+}
 
 #content{
 		margin-left:100px;
