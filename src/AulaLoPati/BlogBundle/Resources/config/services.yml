@@ -22,7 +22,7 @@ services:
   sonata.aulalopati.admin.categoria:
     class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: 'Jornades', label: categoria }
+      - { name: sonata.admin, manager_type: orm, group: 'Categories', label: categoria }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Categoria

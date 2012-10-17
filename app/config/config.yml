@@ -62,7 +62,7 @@ doctrine:
 
 # Sonata Admin Bundle             
 sonata_admin:
-  title:  "Administrador de continguts - L'Aula Lo Pati"
+  title:  "Administrador de continguts"
   title_logo: /images/logo_lopati_inverted.png
   templates:
     layout: BlogBundle:Admin:my_standard_layout.html.twig
@@ -75,6 +75,7 @@ sonata_admin:
     groups:
         Jornades:
         Enllaços:
+
 
 
 # Sonata Block Bundle

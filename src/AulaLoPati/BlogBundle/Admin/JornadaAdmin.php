@@ -101,8 +101,8 @@ class JornadaAdmin extends Admin
 		$mapper
 		->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))
-		->add('portada', null, array('label' => 'És portada'))
 		->add('actiu')
+
 		//->add('data_publicacio', null, array('label'=>'Data publicació', 'template' => 'BlogBundle:Default:list_custom_date_field.html.twig'))
 		
 		
@@ -122,7 +122,6 @@ class JornadaAdmin extends Admin
         $datagridMapper
             ->add('titol')
             ->add('actiu')
-            ->add('portada')
             ->add('data_publicacio')
 
         ;
