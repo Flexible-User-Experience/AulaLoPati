@@ -104,7 +104,7 @@ class EnllasAdmin extends Admin
 		->setHelps(array('data_caducitat'=>'Data fins quan sera visible la pàgina -> Automaticament serà Arxiu. Deixar en blanc per no caducar. Format: dd-MM-yyyy '))
 		->setHelps(array('data_realitzacio'=>'Ex: "dia: 19 octubre _ hora: 15:00h _ lloc: Lo Pati"'))
 		->setHelps(array('link'=>'Ex: "http://www.lopati.cat"'))
-		
+		->setHelps(array('ordre'=>'Nombre enter, ordena de més gran a més petit'))
 		;
 	}
 
@@ -114,6 +114,7 @@ class EnllasAdmin extends Admin
 		->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))
 		->add('actiu')
+		->add('ordre')
 		//->add('data_publicacio', null, array('label'=>'Data publicació', 'template' => 'BlogBundle:Default:list_custom_date_field.html.twig'))
 		
 		
