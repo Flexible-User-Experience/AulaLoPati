@@ -55,7 +55,10 @@ class DefaultController extends Controller
 	}
 	public function enllasosAction(){
 	
-		return $this->render('BlogBundle:Default:enllasos.html.twig');
+		$em = $this->getDoctrine()->getEntityManager();
+		$enllasos= $em->getRepository('BlogBundle:Enllas')->findEnllasos();
+		
+		return $this->render('BlogBundle:Default:enllasos.html.twig', array('enllasos'=>$enllasos));
 	
 	}
 	

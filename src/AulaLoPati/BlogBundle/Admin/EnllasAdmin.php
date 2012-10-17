@@ -28,7 +28,7 @@ class EnllasAdmin extends Admin
 				->add('actiu', null, array('label' => 'Actiu ?','required'  => false))
 		//->add('imgPetitaGris',null,array('required'  => false))
 		//->add('imgPetitaMagenta',null,array('required'  => false))
-		->add('link',null,array('label'=>'Enllaç','required'=>true))
+		->add('link','url',array('label'=>'Enllaç','required'=>true))
 		->add('ordre',null,array('required'=>true))
 		//->add('data_publicacio', 'date', array('label' => 'Data publicació', 'widget' => 'single_text', 'format' => 'dd-MM-yyyy'))
 		//->add('data_visible', null, array('label' => 'Data visible ?', 'required'  => false))

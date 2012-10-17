@@ -146,7 +146,7 @@ width:70px;
 strong, b {
 font-weight: bold;
 }
-.titol_jornada, .titol_ponencia{
+.titol_jornada, .titol_ponencia, .titol_enllas{
 	font-size:1.2em;
 	color:#1D6880;
 	font-weight: bold;
@@ -260,4 +260,15 @@ font-weight: bold;
 	left: 939px;
 	width:24px;
 	
+}
+.enllas_imatge{
+	float:left;
+	margin-bottom:25px;
+	
+}
+.link{
+	margin-left:20px;
+	width:400px;
+	float:left;
+	margin-bottom:20px;
 }

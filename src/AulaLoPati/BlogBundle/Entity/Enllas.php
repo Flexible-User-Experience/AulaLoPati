@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AulaLoPati\BlogBundle\Repository\EnllasRepository")
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity("titol")
  * @Vich\Uploadable
@@ -52,7 +52,7 @@ class Enllas {
 	 */
 	protected $link;
 	/** 
-	 * @ORM\Column(type="string", length=300, nullable=false) 
+	 * @ORM\Column(type="string", length=300, nullable=true) 
 	 *
 	 */
 	protected $resum = null;

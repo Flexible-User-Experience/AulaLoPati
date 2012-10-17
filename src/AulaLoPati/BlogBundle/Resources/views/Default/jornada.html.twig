@@ -28,13 +28,17 @@
 			
 			{%  for ponencia in ponencies %}
 						{%  if ponencia.imagePetitaName is not null%}
-						<div class="ponencia fondo" style="background-image:  url('{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}')";>
+						<div class="ponencia fondo" style=" background-image:  url('{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}');">
 						{% else %}
 							<div class="ponencia">
 						{% endif %}
 						<div class="categoria"> {{ ponencia.categoria }}</div>
-						<h3 class="titol_ponencia">{{ ponencia.titol }}</h3>
 						
+						{% if ponencia.document1Name  %}					
+							<h3 class="titol_ponencia"><a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}'>{{ ponencia.titol }}</a></h3>
+						{% else %}
+							<h3 class="titol_ponencia">{{ ponencia.titol }}</h3>					
+						{% endif %}
 						<div class="autor"> {{ ponencia.autor}}</div>
 							</div>
 						<div class="descripcio ponencia">{{ ponencia.descripcio | raw}}</div>	

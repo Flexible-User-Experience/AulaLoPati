@@ -196,7 +196,7 @@ liip_imagine:
         portada:
             quality: 90
             filters:
-                thumbnail: { size: [155,155], mode: outbound }
+                thumbnail: { size: [155,null], mode: outbound }
                 
                 
         thumb_imatge_pagina:

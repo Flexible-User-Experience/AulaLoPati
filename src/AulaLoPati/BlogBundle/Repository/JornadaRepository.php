@@ -10,7 +10,7 @@ class JornadaRepository extends EntityRepository
 		$em = $this->getEntityManager();
 		
 		$consulta = $em->createQuery('SELECT j FROM BlogBundle:Jornada j WHERE
-		j.actiu = TRUE ORDER BY j.data_publicacio');
+		j.actiu = TRUE ORDER BY j.data_publicacio DESC');
 		
 		return $consulta->getResult();
 	}
