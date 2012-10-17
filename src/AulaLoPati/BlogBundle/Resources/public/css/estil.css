@@ -37,8 +37,12 @@ a{
 }
 p{
 	margin: 10px 0;
-	font-size:0.9em;
+	font-size:0.95em;
 	line-height:1.2em;
+}
+.titol_ocult{
+	display:none;
+	
 }
 #menu{
 
@@ -89,7 +93,7 @@ margin-top:20px;
 	
 }
 #footer ul li p{
-	font-size:0.9em;
+	font-size:0.95em;
 margin-bottom:20px;
 	
 	
