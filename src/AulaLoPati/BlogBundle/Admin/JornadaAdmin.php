@@ -48,7 +48,7 @@ class JornadaAdmin extends Admin
 					'property_path' => 'imagePetita','required' => false))
 		->add('imagePetitaName',null,array('required' => false))*/
 		->with('Imatge en miniatura')
-		->add('imagePetita', 'file', array('label' => 'Imatge petita gris', 'required'=>false))
+		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
 		
 		->with('Imatge principal')

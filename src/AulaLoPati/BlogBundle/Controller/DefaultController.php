@@ -53,12 +53,12 @@ class DefaultController extends Controller
 				'ponencies'=>$ponencies));
 	
 	}
-	public function enllasosAction(){
+	public function recursosAction(){
 	
 		$em = $this->getDoctrine()->getEntityManager();
 		$enllasos= $em->getRepository('BlogBundle:Enllas')->findEnllasos();
 		
-		return $this->render('BlogBundle:Default:enllasos.html.twig', array('enllasos'=>$enllasos));
+		return $this->render('BlogBundle:Default:recursos.html.twig', array('enllasos'=>$enllasos));
 	
 	}
 	
@@ -87,4 +87,12 @@ class DefaultController extends Controller
 		return $this->render('BlogBundle:Default:contacte.html.twig',array('form' => $form->createView()));
 	
 	}
+	
+	public function creditsAction(){
+
+	
+		return $this->render('BlogBundle:Default:credits.html.twig');
+	
+	}
+	
 }

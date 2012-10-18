@@ -32,11 +32,16 @@
 						{% else %}
 							<div class="ponencia">
 						{% endif %}
-						<div class="categoria"> {{ ponencia.categoria }}</div>
+			
 						
-						{% if ponencia.document1Name  %}					
+						{% if ponencia.document1Name  %}
+						<div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">
+							<img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
+						{{ ponencia.categoria }}</a></div>					
 							<h3 class="titol_ponencia"><a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">{{ ponencia.titol }}</a></h3>
 						{% else %}
+							<div class="categoria"> 					
+						{{ ponencia.categoria }}</div>
 							<h3 class="titol_ponencia">{{ ponencia.titol }}</h3>					
 						{% endif %}
 						<div class="autor"> {{ ponencia.autor}}</div>

@@ -19,13 +19,9 @@
 
 body{
 font-family: 'Conv_DINPro-Light', Sans-Serif, Arial;	
-background-image:url('/images/logo_AulaLoPati.jpg');
 background-color:#FFF;
-background-repeat:no-repeat;
-background-position: 50% 0;
 width:960px;
 margin: 0 auto;
-margin-top:270px;
 color:#666;	
 }
 h1,h2,h3,h4,h5, #menu{
@@ -38,14 +34,15 @@ a{
 p{
 	margin: 10px 0;
 	font-size:0.95em;
-	line-height:1.2em;
+	line-height:1.3em;
 }
 .titol_ocult{
 	display:none;
 	
 }
 #menu{
-
+	position:relative;
+	top: -145px;
 	width:245px;
 	
 	text-align:right;
@@ -66,6 +63,8 @@ p{
 }
 
 #content{
+		position:relative;
+		top: -145px;
 		margin-left:100px;
 		float:left;
 		width:615px;
@@ -157,14 +156,14 @@ width:70px;
 	background-position:290px 0px;
 	
 }
-strong, b {
+strong, b, .bold {
 font-weight: bold;
 }
 .titol_jornada, .titol_ponencia, .titol_enllas{
 	font-size:1.2em;
 	color:#1D6880;
 	font-weight: bold;
-	margin-bottom:15px;
+	margin-bottom:10px;
 	
 }
 .titol_ponencia{
@@ -176,8 +175,9 @@ font-weight: bold;
 }
 .resum{
 	margin:0;
+	margin-top:10px;
 	font-size:0.95em;
-	line-height:1.2em;
+	line-height:1.3em;
 	
 }
 .descripcio{
@@ -191,7 +191,7 @@ font-weight: bold;
 .descripcio p{
 	margin:0;
 	font-size:0.95em;
-	line-height:1.2em;
+	line-height:1.3em;
 	
 }
 .peu_foto{
@@ -270,8 +270,8 @@ font-weight: bold;
 }
 #contacte{
 	position:relative;
-	top: -90px;
-	left: 939px;
+	top: -233px;
+	left: 934px;
 	width:24px;
 	
 }
@@ -285,4 +285,74 @@ font-weight: bold;
 	width:400px;
 	float:left;
 	margin-bottom:20px;
+}
+.icona_mesinfo{
+	width:18px;
+	
+}
+.icona_descarrega{
+	position:relative;
+	top:5px;
+	width:18px;
+	
+}
+#credits{
+	font-family: 'Conv_DINPro-light', Sans-Serif, Arial;
+		font-weight: 500;
+}
+#credits p{
+	margin:3px;
+	line-height: 1.2em;
+}
+#credits .bold{
+	font-family: 'Conv_DINPro-Medium', Sans-Serif, Arial;
+	font-weight: normal;
+	margin:0;
+}
+#credits ul li img{
+	width:130px;
+	margin: 0 10px;
+}
+#credits ul li{
+	float:left;
+	
+}
+#credits h3{
+	margin-bottom:3px;
+	font-weight:normal:
+	
+}
+#credits .block_credits{
+	margin: 25px 0;
+	
+}
+#credits h2{
+	font-size:1.2em;
+	color:#1D6880;
+	font-weight: bold;
+	margin-bottom:10px;
+	
+}
+#credits p{
+	margin:0;
+	
+}
+#credits #organitza{
+	height:120px;
+	margin-bottom:20px;
+	
+}
+#credits #organitza img{
+	width: 120px;
+	
+}
+#credits #colabora, #suport{
+	height:100px;
+	
+}
+.link_sense_estil{
+	color: #666;
+	visited: none;
+	
+	
 }

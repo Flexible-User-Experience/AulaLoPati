@@ -34,6 +34,10 @@ contacte:
     pattern:  /contacte/
     defaults: { _controller: BlogBundle:Default:contacte }
     
-enllasos:
-    pattern:  /enllaços/
-    defaults: { _controller: BlogBundle:Default:enllasos }
+recursos:
+    pattern:  /recursos/
+    defaults: { _controller: BlogBundle:Default:recursos }
+
+credits:
+    pattern:  /credits/
+    defaults: { _controller: BlogBundle:Default:credits }

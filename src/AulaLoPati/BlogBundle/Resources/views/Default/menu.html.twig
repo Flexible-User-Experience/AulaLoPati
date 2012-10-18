@@ -25,11 +25,11 @@
 {# 		<li class="actiu"><a href="{{ path('arxiu') }}" >arxiu</a></li>#}
 {# 	{% endif %}#}
 	
-	{% if menu=='publicacions' %}
-		<li><a href="{{ path('publicacions') }}" class="actiu">publicacions</a></li>
-	{% else %}
-		<li class="actiu"><a href="{{ path('publicacions') }}" >publicacions</a></li>
-	{% endif %}
+{# 	{% if menu=='publicacions' %}#}
+{# 		<li><a href="{{ path('publicacions') }}" class="actiu">publicacions</a></li>#}
+{# 	{% else %}#}
+{# 		<li class="actiu"><a href="{{ path('publicacions') }}" >publicacions</a></li>#}
+{# 	{% endif %}#}
 	
 {# 	{% if menu=='contacte' %}#}
 {# 		<li><a href="{{ path('contacte') }}" class="actiu">contacte</a></li>#}
@@ -38,12 +38,17 @@
 {# 	{% endif %}#}
 	
 
-	{% if menu=='enllasos' %}
-		<li><a href="{{ path('enllasos') }}" class="actiu">enllaços</a></li>
+	{% if menu=='recursos' %}
+		<li><a href="{{ path('recursos') }}" class="actiu">recursos</a></li>
 	{% else %}
-		<li><a href="{{ path('enllasos') }}" >enllaços</a></li>
+		<li><a href="{{ path('recursos') }}" >recursos</a></li>
 	{% endif %}
-		
+	
+	{% if menu=='credits' %}
+		<li><a href="{{ path('credits') }}" class="actiu">crèdits</a></li>
+	{% else %}
+		<li><a href="{{ path('credits') }}" >crèdits</a></li>
+	{% endif %}	
 		
 		
 		

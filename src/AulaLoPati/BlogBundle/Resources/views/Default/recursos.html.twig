@@ -2,7 +2,7 @@
 
 {% block title %}Enllaços{% endblock %}
 {% block menu %}
-{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'enllasos'} %}
+{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'recursos'} %}
 {% endblock %}
  {% block content %}
  
@@ -22,8 +22,9 @@
 							</a>
 							<div class="link">
 						<h3 class="titol_enllas"><a href="{{ enllas.link }}" target="_blank">{{ enllas.titol }}</a></h3>
-						
-					
+						<a href="{{ enllas.link }}" target="_blank">
+						<img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
+						</a>
 						<div class="descripcio_enllas">{{ enllas.descripcio | raw}}</div>	
 					
 

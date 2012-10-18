@@ -134,7 +134,6 @@ class EnllasAdmin extends Admin
         $datagridMapper
             ->add('titol')
             ->add('actiu')
-            ->add('portada')
             ->add('data_publicacio')
 
         ;
