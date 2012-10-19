@@ -356,3 +356,18 @@ font-weight: bold;
 	
 	
 }
+#colaboradors p:first-child{
+	margin:0;
+	
+}
+#colaboradors p:nth-child(2) {
+	margin:0;
+	
+}
+
+
+#colaboradors p{
+	
+	margin:5px 0;
+	
+}
