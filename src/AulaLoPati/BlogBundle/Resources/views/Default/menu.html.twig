@@ -6,18 +6,18 @@
 	<li><a href="{{ path('presentacio') }}">presentació</a>	</li>
 	{% endif %}
 	
-{# 	{% if menu=='jornades' %}#}
-{# 		<li ><a href="{{ path('jornades') }}" class="actiu">jornades</a></li>#}
-{# 		{% else %}#}
-{# 		<li><a href="{{ path('jornades') }}">jornades</a></li>#}
-{# 			{% endif %}#}
+ 	{% if menu=='jornades' %}
+ 		<li ><a href="{{ path('jornades') }}" class="actiu">jornades</a></li>
+ 		{% else %}
+ 		<li><a href="{{ path('jornades') }}">jornades</a></li>
+ 			{% endif %}
 	
-{# 	{% if menu=='projectes' %}#}
-{# 		<li ><a href="{{ path('projectes') }}" class="actiu">projectes</a></li>#}
-{# 	{% else %}#}
-{# 		<li><a href="{{ path('projectes') }}">projectes</a></li>#}
-{# 	{% endif %}#}
-	
+ 	{#{% if menu=='projectes' %}#}
+ 		{#<li ><a href="{{ path('projectes') }}" class="actiu">projectes</a></li>#}
+ 	{#{% else %}#}
+ 		{#<li><a href="{{ path('projectes') }}">projectes</a></li>#}
+ 	{#{% endif %}#}
+	{##}
 	
 {# 	{% if menu=='arxiu' %}#}
 {# 		<li class="actiu"><a href="{{ path('arxiu') }}" class="actiu">arxiu</a></li>#}
@@ -38,11 +38,11 @@
 {# 	{% endif %}#}
 	
 
-{# 	{% if menu=='recursos' %}#}
-{# 		<li><a href="{{ path('recursos') }}" class="actiu">recursos</a></li>#}
-{# 	{% else %}#}
-{# 		<li><a href="{{ path('recursos') }}" >recursos</a></li>#}
-{# 	{% endif %}#}
+ 	{% if menu=='recursos' %}
+ 		<li><a href="{{ path('recursos') }}" class="actiu">recursos</a></li>
+ 	{% else %}
+ 		<li><a href="{{ path('recursos') }}" >recursos</a></li>
+ 	{% endif %}
 	
 	{% if menu=='credits' %}
 		<li><a href="{{ path('credits') }}" class="actiu">crèdits</a></li>
