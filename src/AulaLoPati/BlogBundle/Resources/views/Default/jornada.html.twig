@@ -28,6 +28,7 @@
 			
 			{%  for ponencia in ponencies %}
                 <div id="ponencia_capçalera">
+
 						{%  if ponencia.imagePetitaName is not null%}
 
                             <div id="imatge_ponencia">
@@ -37,20 +38,23 @@
 
 						{% endif %}
 			
-						
-						{% if ponencia.document1Name  %}
-						<div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">
-							<img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
-						{{ ponencia.categoria }}</a></div>					
-							<h3 class="titol_ponencia"><a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">{{ ponencia.titol }}</a></h3>
-						{% else %}
-							<div class="categoria"> 					
-						{{ ponencia.categoria }}</div>
-							<h3 class="titol_ponencia">{{ ponencia.titol }}</h3>					
-						{% endif %}
-						<div class="autor"> {{ ponencia.autor}}</div>
-							</div>
-                </div>
+						<div id="ponencia_dreta">
+						    {% if ponencia.document1Name  %}
+						        <div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">
+							    <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
+						        {{ ponencia.categoria }}</a></div>
+							    <h3 class="titol_ponencia"><a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">{{ ponencia.titol }}</a></h3>
+						    {% else %}
+							 <div class="categoria">
+						        {{ ponencia.categoria }}
+                             </div>
+
+                             <h3 class="titol_ponencia">{{ ponencia.titol }}</h3>
+						    {% endif %}
+					    	<div class="autor"> {{ ponencia.autor}}</div>
+
+                        </div>
+                    </div>
 						<div class="descripcio ponencia">{{ ponencia.descripcio | raw}}</div>	
 					
 						{% if ponencia.dataRealitzacio is not null %}
