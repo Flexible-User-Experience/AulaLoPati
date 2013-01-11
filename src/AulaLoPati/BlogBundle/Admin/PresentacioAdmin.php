@@ -15,6 +15,13 @@ use AulaLoPati\BlogBundle\Entity\Jornada;
 
 class PresentacioAdmin extends Admin
 {
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection
+            ->remove('create')
+            ->remove('delete')
+        ;
+    }
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper
