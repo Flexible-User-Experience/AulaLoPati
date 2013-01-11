@@ -301,7 +301,7 @@ font-weight: bold;
 	
 }
 #credits{
-	
+
 		font-weight: 500;
 }
 #credits p{
@@ -310,7 +310,7 @@ font-weight: bold;
 }
 #credits .bold{
 
-	font-weight: normal;
+	font-weight: bold;
 	margin:0;
 }
 #credits ul li img{
