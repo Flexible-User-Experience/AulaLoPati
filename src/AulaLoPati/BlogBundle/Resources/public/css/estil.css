@@ -301,7 +301,7 @@ font-weight: bold;
 	
 }
 #credits{
-	font-family: 'Conv_DINPro-light', Sans-Serif, Arial;
+	
 		font-weight: 500;
 }
 #credits p{
@@ -309,7 +309,7 @@ font-weight: bold;
 	line-height: 1.2em;
 }
 #credits .bold{
-	font-family: 'Conv_DINPro-Medium', Sans-Serif, Arial;
+
 	font-weight: normal;
 	margin:0;
 }
