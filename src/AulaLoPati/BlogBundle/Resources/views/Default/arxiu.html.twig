@@ -1,10 +1,33 @@
 {% extends '::layout.html.twig' %}
 
-{% block title %}Ponències{% endblock %}
+{% block title %}Arxiu : {{arxiu |striptags}}{% endblock %}
 {% block menu %}
 {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'arxiu'} %}
 {% endblock %}
  {% block content %}
-<p>en construcció</p>
+ 
+
+<div id="jornades">
+
+
+			
+			<h2 class="titol_jornada">{{ arxiu.titol }}</h2>
+			
+			<div class="descripcio">
+			{{ arxiu.descripcio|raw }}
+			
+			</div>
+			
+			{% if arxiu.imageGran1Name  %}
+				<img src='{{ vich_uploader_asset(arxiu, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : arxiu {{ arxiu.titol }}"/>
+						<p class="peu_foto">{{ arxiu.peuImageGran1 }} </p>
+			
+			{% endif %}
+			
+			<div class="separador"></div>
+			
+
+		
+</div>
 
 {% endblock %}

@@ -13,12 +13,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
- * @ORM\Entity(repositoryClass="AulaLoPati\BlogBundle\Repository\EnllasRepository")
+ * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity("titol")
  * @Vich\Uploadable
  */
-class Enllas {
+class Presentacio {
 
 	/**
 	 * @ORM\Id
@@ -26,17 +26,16 @@ class Enllas {
 	 * @ORM\GeneratedValue
 	 */
 	protected $id;
+	
+	
 
+	
 	/** @ORM\Column(type="string", length=50, nullable=true) */
 	protected $tipus;
-	
 
-	
-
-	
-	/**
-	 * @ORM\Column(type="string", length=255)
-	 *
+	/** 
+	 * @ORM\Column(type="string", length=255,nullable=true)
+	 * 
 	 */
 	protected $titol;
 	
@@ -46,13 +45,9 @@ class Enllas {
 	 */
 	protected $slug;
 	
-	/**
-	 * @ORM\Column(type="string", length=255, nullable=true)
-	 *
-	 */
-	protected $link;
+	
 	/** 
-	 * @ORM\Column(type="string", length=300, nullable=true) 
+	 * @ORM\Column(type="text", nullable=true)
 	 *
 	 */
 	protected $resum = null;
@@ -67,9 +62,6 @@ class Enllas {
 	 * @ORM\Column(type="text", nullable=true)
 	  */
 	protected $links;
-	
-	/** @ORM\Column(type="decimal", precision=3, scale=0) */
-	protected $ordre;
 	
 	/** @ORM\Column(type="boolean", nullable=true) */
 	protected $actiu = FALSE;
@@ -100,6 +92,12 @@ class Enllas {
 	 * 
 	 */
 	protected $lloc = NULL;
+
+    /**
+     * @ORM\Column(type="date",nullable=true)
+     *
+     */
+    protected $updatedAt= NULL;
 	
 
 
@@ -212,7 +210,14 @@ class Enllas {
 	public function setVideo($filename) {
 		$this->video=$filename;
 	}
-	
+
+    public function getUpdatedAt() {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt($filename) {
+        $this->updatedAt=$filename;
+    }
 	public function getUrlVimeo() {
 		return $this->urlVimeo;
 	}
@@ -318,6 +323,8 @@ class Enllas {
 	
 	public function setPeuImageGran1($file) {
 		$this->peuImageGran1=$file;
+
+
 	}
 	
 	public function getImageGran1Name() {
@@ -326,6 +333,8 @@ class Enllas {
 	
 	public function setImageGran1Name($filename) {
 		$this->imageGran1Name=$filename;
+
+
 	}
 	
 	public function getImageGran1() {
@@ -333,7 +342,10 @@ class Enllas {
 	}
 	
 	public function setImageGran1($file) {
+
+
 		$this->imageGran1=$file;
+
 	}
 	
 	public function getImagePetitaName() {
@@ -369,7 +381,7 @@ class Enllas {
 		$this->imagePetita2Name=$filename;
 	}
 	public function __construct() {
-		
+		$this->ponencies = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 	
 
@@ -489,7 +501,7 @@ class Enllas {
 	}
 
 	public function __toString() {
-		return $this->getTitol();
+		return 'Presentació';
 	}
 
 
@@ -680,53 +692,20 @@ class Enllas {
 		return $this->locale;
 	}
 	
-	public function setJornada(\AulaLoPati\BlogBundle\Entity\Jornada $jornada = null)
+	public function addPonencies(\AulaLoPati\BlogBundle\Entity\Ponencia $ponencies)
 	{
-		$this->jornada = $jornada;
+		$this->ponencies[] = $ponencies;
 	}
 	
 
-	public function getJornada()
-	{
-		return $this->jornada;
-	}
-	
-	public function setCategoria(\AulaLoPati\BlogBundle\Entity\Categoria $categoria = null)
-	{
-		$this->categoria = $categoria;
-	}
-	
 
-	public function getCategoria()
+	public function getPonencies()
 	{
-		return $this->categoria;
+		return $this->ponencies;
 	}
-	
-	
-	public function setLink($locale) {
-		$this->link = $locale;
-	
+	public function setPonencies($translations)
+	{
+		$this->ponencies = $translations;
+		return $this;
 	}
-	
-	/**
-	 * Get compartir
-	 *
-	 * @return boolean
-	 */
-	public function getLink() {
-		return $this->link;
-	}
-	
-	
-	
-	public function setOrdre($locale) {
-		$this->ordre = $locale;
-	
-	}
-	
-
-	public function getOrdre() {
-		return $this->ordre;
-	}
-
 }

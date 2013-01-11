@@ -112,7 +112,7 @@ class EnllasAdmin extends Admin
 	{
 		$mapper
 		->add('id')
-		->addIdentifier('titol', null, array('label' => 'Títol'))
+		//->addIdentifier('titol', null, array('label' => 'Títol'))
 		->add('actiu')
 		->add('ordre')
 		//->add('data_publicacio', null, array('label'=>'Data publicació', 'template' => 'BlogBundle:Default:list_custom_date_field.html.twig'))

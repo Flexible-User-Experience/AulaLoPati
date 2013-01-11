@@ -22,12 +22,14 @@ jornades:
     pattern:  /jornades/
     defaults: { _controller: BlogBundle:Default:llistaJornades }
     
-jornada:
-    pattern:  /jornades/{titol}
-    defaults: { _controller: BlogBundle:Default:jornada }
+
     
 arxiu:
     pattern:  /arxiu/
+    defaults: { _controller: BlogBundle:Default:llistaArxius }
+
+arxiu_detall:
+    pattern:  /arxiu/{titol}
     defaults: { _controller: BlogBundle:Default:arxiu }
 
 contacte:

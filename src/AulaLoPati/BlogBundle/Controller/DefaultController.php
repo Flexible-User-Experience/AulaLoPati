@@ -18,7 +18,14 @@ class DefaultController extends Controller
 	}
     public function presentacioAction()
     {
-        return $this->render('BlogBundle:Default:presentacio.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+        //$categories = $em->getRepository('MenuBundle:Categoria')->findAll();
+        $query = $em->createQuery('SELECT p FROM BlogBundle:Presentacio p WHERE p.id =1');
+
+        $presentacio = $query->getOneOrNullResult();
+
+        return $this->render('BlogBundle:Default:presentacio.html.twig',array('presentacio' => $presentacio));
     }
     
 	public function projectesAction(){
@@ -26,11 +33,24 @@ class DefaultController extends Controller
 		return $this->render('BlogBundle:Default:projectes.html.twig');
 		
 	}
-	public function arxiuAction(){
+	public function llistaArxiusAction(){
+
+        $em = $this->getDoctrine()->getManager();
+        $arxius= $em->getRepository('BlogBundle:Arxiu')->findArxius();
+
+        return $this->render('BlogBundle:Default:llistaArxius.html.twig', array('arxius'=>$arxius));
 	
-		return $this->render('BlogBundle:Default:arxiu.html.twig');
+		//return $this->render('BlogBundle:Default:arxiu.html.twig');
 	
 	}
+    public function arxiuAction($titol){
+        $em = $this->getDoctrine()->getManager();
+        $arxiu = $em->getRepository('BlogBundle:Arxiu')->findOneBy(array('slug'=>$titol));
+
+
+        return $this->render('BlogBundle:Default:arxiu.html.twig',array('arxiu'=>$arxiu));
+
+    }
 	public function publicacionsAction(){
 	
 		return $this->render('BlogBundle:Default:publicacions.html.twig');
@@ -38,14 +58,14 @@ class DefaultController extends Controller
 	}
 	
 	public function llistaJornadesAction(){
-		$em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 		$jornades= $em->getRepository('BlogBundle:Jornada')->findJornades();
 		
 		return $this->render('BlogBundle:Default:llistaJornades.html.twig', array('jornades'=>$jornades));
 	
 	}
 	public function jornadaAction($titol){
-		$em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 		$jornada = $em->getRepository('BlogBundle:Jornada')->findOneBy(array('slug'=>$titol));
 		$ponencies= $em->getRepository('BlogBundle:Ponencia')->findPonencies($titol);
 		
@@ -54,8 +74,8 @@ class DefaultController extends Controller
 	
 	}
 	public function recursosAction(){
-	
-		$em = $this->getDoctrine()->getEntityManager();
+
+        $em = $this->getDoctrine()->getManager();
 		$enllasos= $em->getRepository('BlogBundle:Enllas')->findEnllasos();
 		
 		return $this->render('BlogBundle:Default:recursos.html.twig', array('enllasos'=>$enllasos));

@@ -27,10 +27,14 @@
 			<div class="separador"></div>
 			
 			{%  for ponencia in ponencies %}
+                <div id="ponencia_capçalera">
 						{%  if ponencia.imagePetitaName is not null%}
-						<div class="ponencia fondo" style=" background-image:  url('{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}');">
+
+                            <div id="imatge_ponencia">
+                                <img src="{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}" alt="imatge ponencia {{ ponencia.titol }}"/>
+                            </div>
 						{% else %}
-							<div class="ponencia">
+
 						{% endif %}
 			
 						
@@ -46,6 +50,7 @@
 						{% endif %}
 						<div class="autor"> {{ ponencia.autor}}</div>
 							</div>
+                </div>
 						<div class="descripcio ponencia">{{ ponencia.descripcio | raw}}</div>	
 					
 						{% if ponencia.dataRealitzacio is not null %}

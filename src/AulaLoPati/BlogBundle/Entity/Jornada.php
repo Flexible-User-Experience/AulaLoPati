@@ -29,8 +29,8 @@ class Jornada {
 	
 	
 	/**
-	 * @ORM\OneToMany(targetEntity="AulaLoPati\BlogBundle\Entity\Ponencia", mappedBy="ponencia", cascade={"persist", "remove"} )
-	 * @ORM\OrderBy({"actiu" = "DESC", "ordre" = "ASC"})
+	 * @ORM\OneToMany(targetEntity="AulaLoPati\BlogBundle\Entity\Ponencia", mappedBy="jornada", cascade={"persist", "remove"} )
+	 * @ORM\OrderBy({"actiu" = "DESC", "data_publicacio" = "ASC"})
 	 */
 	protected $ponencies;
 	

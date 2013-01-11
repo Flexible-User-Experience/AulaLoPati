@@ -20,12 +20,13 @@
 									
 				<div class="columna_dreta">			
 							<h2 class="titol_jornada"><a href="{{ path('jornada',{'titol':jornada.slug})}}">{{ jornada.titol|raw }}</a></h2>
-							<a href="{{ path('jornada',{'titol':jornada.slug})}}">
-							<img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
-							</a>
+
 							<div class="resum">
 							{{ jornada.resum}}							
 							</div>
+                            <a href="{{ path('jornada',{'titol':jornada.slug})}}">
+                                 <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
+                            </a>
 									
 				</div>
 			</div>
@@ -47,16 +48,17 @@
 						
 					<h2 class="titol_jornada"><a href="{{ path('jornada',{'titol':jornada.slug})}}">{{ jornada.titol|raw }}</a></h2>				
 					
-					<a href="{{ path('jornada',{'titol':jornada.slug})}}">
-					<img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
-					</a>
+
 					
 					
 				
 					<div class="resum">
 					{{ jornada.resum}}
-					
+
 					</div>
+                    <a href="{{ path('jornada',{'titol':jornada.slug})}}">
+                        <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
+                    </a>
 				
 					{% if jornada.dataRealitzacio is not null %}
 					

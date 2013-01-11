@@ -17,6 +17,7 @@ framework:
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
     trust_proxy_headers: false # Whether or not the Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
+    trusted_proxies: ~
     session:         ~
 
 # Twig Configuration
@@ -71,10 +72,12 @@ sonata_admin:
     list: SonataAdminBundle:CRUD:list.html.twig
     show: SonataAdminBundle:CRUD:show.html.twig
     edit: SonataAdminBundle:CRUD:edit.html.twig
-  dashboard:  
+  dashboard:
     groups:
         Jornades:
         Enllaços:
+        Presentacio:
+        Arxiu:
 
 
 
@@ -84,7 +87,6 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
-
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
@@ -198,7 +200,7 @@ liip_imagine:
         imatge_pagina:
             quality: 90
             filters:
-                thumbnail: { size: [710,null], mode: outbound }
+                thumbnail: { size: [615,null], mode: outbound }
                 
         portada:
             quality: 90

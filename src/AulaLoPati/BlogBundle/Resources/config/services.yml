@@ -1,10 +1,18 @@
 services:
 
+  sonata.aulalopati.admin.presentacio:
+    class: AulaLoPati\BlogBundle\Admin\PresentacioAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Presentacio, label: presentacio }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Presentacio
+      - BlogBundle:Admin
         
   sonata.aulalopati.admin.pagina:
     class: AulaLoPati\BlogBundle\Admin\JornadaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: 'Jornades', label: jornada }
+      - { name: sonata.admin, manager_type: orm, group: Jornades, label: jornada }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Jornada
@@ -13,16 +21,26 @@ services:
   sonata.aulalopati.admin.ponencia:
     class: AulaLoPati\BlogBundle\Admin\PonenciaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: 'Jornades', label: ponencia }
+      - { name: sonata.admin, manager_type: orm, group: Jornades, label: ponencia }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Ponencia
       - BlogBundle:Admin
-      
+
+
+  sonata.aulalopati.admin.arxiu:
+    class: AulaLoPati\BlogBundle\Admin\ArxiuAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Arxiu, label: Arxiu }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Arxiu
+      - BlogBundle:Admin
+
   sonata.aulalopati.admin.categoria:
     class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: 'Categories', label: categoria }
+      - { name: sonata.admin, manager_type: orm, group: Categories, label: categoria }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Categoria
@@ -32,7 +50,7 @@ services:
   sonata.aulalopati.admin.enllas:
     class: AulaLoPati\BlogBundle\Admin\EnllasAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: 'Enllaços', label: enllaç }
+      - { name: sonata.admin, manager_type: orm, group: Enllaços, label: enllaç }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Enllas

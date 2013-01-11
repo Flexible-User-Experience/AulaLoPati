@@ -18,7 +18,7 @@
 
 
 body{
-font-family: 'Conv_DINPro-Light', Sans-Serif, Arial;	
+font-family: Helvetica, Arial, Sans-Serif;
 background-color:#FFF;
 width:960px;
 margin: 0 auto;
@@ -39,6 +39,10 @@ p{
 .titol_ocult{
 	display:none;
 	
+}
+#fons{
+    margin-top:25px;
+
 }
 #menu{
 	position:relative;
@@ -370,4 +374,26 @@ font-weight: bold;
 	
 	margin:5px 0;
 	
+}
+.icona_mesinfo{
+    margin-top:10px;
+
+}
+#presentacio img{
+
+    margin-top:10px;
+}
+img.petita{
+    width:100px !important;
+}
+#ponencia_capçalera{
+    float:left;
+    width:100%;
+
+}
+#imatge_ponencia{
+    margin-right:25px;
+    float:left;
+    margin-bottom:20px;
+
 }
