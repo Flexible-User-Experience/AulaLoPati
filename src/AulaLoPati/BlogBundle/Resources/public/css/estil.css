@@ -251,14 +251,13 @@ font-weight: bold;
 }
 .columna_esquerra{
 	float:left;
-	height:155px;
+	margin-bottom: 25px;
 
 }
 .columna_dreta{
 	float:left;
 	width:440px;
 	margin-left:20px;
-	min-height:155px;
 	margin-bottom: 25px;
 }
 .fondo{
