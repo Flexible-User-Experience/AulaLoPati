@@ -386,6 +386,9 @@ font-weight: bold;
 img.petita{
     width:100px !important;
 }
+img.molt_petita{
+    width:85px !important;
+}
 #ponencia_capçalera{
     float:left;
     width:100%;
@@ -395,5 +398,9 @@ img.petita{
     margin-right:25px;
     float:left;
     margin-bottom:20px;
+
+}
+p.text_petit{
+    font-size:0.8em;
 
 }

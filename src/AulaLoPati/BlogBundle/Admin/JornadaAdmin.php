@@ -8,6 +8,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\PageBundle\Model\PageInterface;
+use Sonata\AdminBundle\Route\RouteCollection;
+
 
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
@@ -15,6 +17,13 @@ use AulaLoPati\BlogBundle\Entity\Jornada;
 
 class JornadaAdmin extends Admin
 {
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection
+            ->remove('create')
+            ->remove('delete')
+        ;
+    }
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper

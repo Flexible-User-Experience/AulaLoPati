@@ -65,12 +65,12 @@ class ArxiuAdmin extends Admin
 		->add('imagePetita2', 'file', array('label' => 'Imatge petita vermell', 'required'=>false))
 		->add('imagePetita2Name', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))*/
 		
-		/*->with('Documents adjunts')
+		->with('Documents adjunts')
 		->add('document1', 'file', array('label' => 'Arxiu 1', 'required'=>false))
 		->add('document1Name', null, array('label' => 'Nom 1', 'required'=>false, 'read_only'=>true,))
 		->add('titolDocument1', null, array('label' => 'Títol 1', 'required'=>false))
-		//->end()
-		
+		->end()
+		/*
 		->add('document2', 'file', array('label' => 'Arxiu 2', 'required'=>false))
 		->add('document2Name', null, array('label' => 'Nom 2', 'required'=>false, 'read_only'=>true,))
 		->add('titolDocument2', null, array('label' => 'Títol 2', 'required'=>false))

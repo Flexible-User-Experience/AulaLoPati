@@ -15,7 +15,7 @@ publicacions:
     defaults: { _controller: BlogBundle:Default:publicacions }
 
 jornada:
-    pattern:  /jornades/{titol}
+    pattern:  /jornades/{titol}/
     defaults: { _controller: BlogBundle:Default:jornada }
     
 jornades:
@@ -29,7 +29,7 @@ arxiu:
     defaults: { _controller: BlogBundle:Default:llistaArxius }
 
 arxiu_detall:
-    pattern:  /arxiu/{titol}
+    pattern:  /arxiu/{titol}/
     defaults: { _controller: BlogBundle:Default:arxiu }
 
 contacte:

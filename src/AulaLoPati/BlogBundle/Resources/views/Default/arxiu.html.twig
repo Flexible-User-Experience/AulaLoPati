@@ -12,7 +12,15 @@
 
 			
 			<h2 class="titol_jornada">{{ arxiu.titol }}</h2>
-			
+
+            {% if arxiu.document1Name  %}
+                <div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(arxiu, 'document1')  }}' target="_blank">
+                <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
+                {{ arxiu.titolDocument1 }}</a></div>
+
+
+            {% endif %}
+
 			<div class="descripcio">
 			{{ arxiu.descripcio|raw }}
 			

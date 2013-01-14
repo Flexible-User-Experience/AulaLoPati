@@ -20,12 +20,12 @@
 
 
                          <div class="columna_dreta">
-                             <h2 class="titol_jornada"><a href="{{ path('arxiu2_detall',{'titol':arxiu.slug})}}">{{ arxiu.titol|raw }}</a></h2>
+                             <h2 class="titol_jornada"><a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">{{ arxiu.titol|raw }}</a></h2>
 
                              <div class="resum">
                                  {{ arxiu.resum}}
                              </div>
-                             <a href="{{ path('arxiu_detall2',{'titol':arxiu.slug})}}">
+                             <a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">
                                  <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
                              </a>
 

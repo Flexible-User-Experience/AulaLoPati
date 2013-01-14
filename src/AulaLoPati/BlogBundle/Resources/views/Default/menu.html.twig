@@ -7,9 +7,9 @@
 	{% endif %}
 	
  	{% if menu=='jornades' %}
- 		<li ><a href="{{ path('jornades') }}" class="actiu">jornades</a></li>
+ 		<li ><a href="{{ path('jornada',{'titol':'art-i-educacio-encontres-i-desencontres'})}}" class="actiu">jornades</a></li>
  		{% else %}
- 		<li><a href="{{ path('jornades') }}">jornades</a></li>
+ 		<li><a href="{{ path('jornada',{'titol':'art-i-educacio-encontres-i-desencontres'})}}">jornades</a></li>
  			{% endif %}
 	
  	{#{% if menu=='projectes' %}#}
@@ -19,11 +19,7 @@
  	{#{% endif %}#}
 	{##}
 	
- 	{% if menu=='arxiu' %}
- 		<li class="actiu"><a href="{{ path('arxiu') }}" class="actiu">arxiu</a></li>
- 	{% else %}
- 		<li class="actiu"><a href="{{ path('arxiu') }}" >arxiu</a></li>
- 	{% endif %}
+
 	
 {# 	{% if menu=='publicacions' %}#}
 {# 		<li><a href="{{ path('publicacions') }}" class="actiu">publicacions</a></li>#}
@@ -43,7 +39,13 @@
  	{% else %}
  		<li><a href="{{ path('recursos') }}" >recursos</a></li>
  	{% endif %}
-	
+
+    {% if menu=='arxiu' %}
+            <li class="actiu"><a href="{{ path('arxiu') }}" class="actiu">arxiu</a></li>
+    {% else %}
+            <li class="actiu"><a href="{{ path('arxiu') }}" >arxiu</a></li>
+    {% endif %}
+
 	{% if menu=='credits' %}
 		<li><a href="{{ path('credits') }}" class="actiu">crèdits</a></li>
 	{% else %}
