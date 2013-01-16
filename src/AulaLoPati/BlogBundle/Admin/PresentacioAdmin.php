@@ -106,7 +106,7 @@ class PresentacioAdmin extends Admin
 	protected function configureListFields(ListMapper $mapper)
 	{
 		$mapper
-		->add('id')
+		//->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))
 		//->add('actiu')
 

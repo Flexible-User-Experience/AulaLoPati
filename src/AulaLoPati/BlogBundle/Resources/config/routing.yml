@@ -21,9 +21,15 @@ jornada:
 jornades:
     pattern:  /jornades/
     defaults: { _controller: BlogBundle:Default:llistaJornades }
-    
 
-    
+projecte:
+    pattern:  /projectes/{titol}/
+    defaults: { _controller: BlogBundle:Default:projecte }
+
+projectes:
+    pattern:  /projectes/
+    defaults: { _controller: BlogBundle:Default:llistaProjectes }
+
 arxiu:
     pattern:  /arxiu/
     defaults: { _controller: BlogBundle:Default:llistaArxius }

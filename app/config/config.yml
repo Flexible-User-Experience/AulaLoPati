@@ -74,10 +74,12 @@ sonata_admin:
     edit: SonataAdminBundle:CRUD:edit.html.twig
   dashboard:
     groups:
-        Jornades:
-        Enllaços:
         Presentacio:
+        Jornades:
+        Projectes:
+        Recursos:
         Arxiu:
+        #Categories:
 
 
 

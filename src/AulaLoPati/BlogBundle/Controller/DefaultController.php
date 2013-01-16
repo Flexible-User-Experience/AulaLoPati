@@ -28,11 +28,7 @@ class DefaultController extends Controller
         return $this->render('BlogBundle:Default:presentacio.html.twig',array('presentacio' => $presentacio));
     }
     
-	public function projectesAction(){
-		
-		return $this->render('BlogBundle:Default:projectes.html.twig');
-		
-	}
+
 	public function llistaArxiusAction(){
 
         $em = $this->getDoctrine()->getManager();
@@ -73,6 +69,23 @@ class DefaultController extends Controller
 				'ponencies'=>$ponencies));
 	
 	}
+    public function llistaProjectesAction(){
+        $em = $this->getDoctrine()->getManager();
+        $projectes= $em->getRepository('BlogBundle:Projecte')->findProjectes();
+
+        return $this->render('BlogBundle:Default:llistaProjectes.html.twig', array('projectes'=>$projectes));
+
+    }
+    public function projecteAction($titol){
+        $em = $this->getDoctrine()->getManager();
+        $projecte = $em->getRepository('BlogBundle:Projecte')->findOneBy(array('slug'=>$titol));
+        $activitats= $em->getRepository('BlogBundle:Activitat')->findActivitats($titol);
+
+        return $this->render('BlogBundle:Default:projecte.html.twig',array('projecte'=>$projecte,
+            'activitats'=>$activitats));
+
+    }
+
 	public function recursosAction(){
 
         $em = $this->getDoctrine()->getManager();

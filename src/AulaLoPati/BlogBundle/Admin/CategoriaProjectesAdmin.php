@@ -13,7 +13,7 @@ use Sonata\PageBundle\Model\PageInterface;
 use Knp\Menu\ItemInterface as MenuItemInterface;
 use AulaLoPati\BlogBundle\Entity\Jornada;
 
-class CategoriaAdmin extends Admin
+class CategoriaProjectesAdmin extends Admin
 {
 	protected function configureFormFields(FormMapper $formMapper)
 	{
@@ -40,14 +40,5 @@ class CategoriaAdmin extends Admin
 			'_sort_by' => 'nom' // field name
 	);
 	
-//	protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-//    {
-//        $datagridMapper
-//            ->add('titol')
-//            ->add('actiu')
-//            ->add('portada')
-//            ->add('data_publicacio')
-//
-//        ;
-//    }
+
 }

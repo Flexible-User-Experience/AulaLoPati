@@ -1,0 +1,81 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Projectes{% endblock %}
+{% block menu %}
+{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'projectes'} %}
+{% endblock %}
+ {% block content %}
+ 
+
+<div id="projectes">
+	{% for projecte in projectes %}
+			
+			{%  if projecte.imagePetitaName is not null%}
+			<div class="jornada">
+				<div class="columna_esquerra">
+				     <a href="{{ path('projecte',{'titol':projecte.slug})}}">  <img id="id{{ projecte.id }}" src="{{ vich_uploader_asset(projecte, 'imagePetita') | imagine_filter('portada') }}" alt="{{ projecte.titol }}" title="{{ projecte.titol }}"></a>
+							
+				</div>
+								
+									
+				<div class="columna_dreta">			
+							<h2 class="titol_jornada"><a href="{{ path('projecte',{'titol':projecte.slug})}}">{{ projecte.titol|raw }}</a></h2>
+
+							<div class="resum">
+							{{ projecte.resum}}
+							</div>
+                            <a href="{{ path('projecte',{'titol':projecte.slug})}}">
+                                 <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
+                            </a>
+									
+				</div>
+			</div>
+			{% if projecte.dataRealitzacio is not null %}
+							
+							<div class="separador_lloc">
+							{{ projecte.dataRealitzacio }}
+							</div>
+							
+	
+			{% else %}
+			
+							<div class="separador"></div>
+			
+			{% endif %}
+			
+			{% else %}
+			
+						
+					<h2 class="titol_jornada"><a href="{{ path('projecte',{'titol':projecte.slug})}}">{{ projecte.titol|raw }}</a></h2>
+					
+
+					
+					
+				
+					<div class="resum">
+					{{ projecte.resum}}
+
+					</div>
+                    <a href="{{ path('projecte',{'titol':projecte.slug})}}">
+                        <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
+                    </a>
+				
+					{% if projecte.dataRealitzacio is not null %}
+					
+					<div class="separador_lloc">
+					{{ projecte.dataRealitzacio }}
+					</div>
+					
+					
+					{% else %}
+					
+					<div class="separador"></div>
+					
+					{% endif %}
+			{% endif %}
+
+	{% endfor %}
+
+</div>
+
+{% endblock %}

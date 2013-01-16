@@ -15,11 +15,13 @@
 			
 			{%  for enllas in enllasos %}
 					
-					
+
+                {% if enllas.imagePetitaName is not null %}
 				
 							<a class="enllas_imatge" href="{{ enllas.link }}" target="_blank">
 							<img src="{{ vich_uploader_asset(enllas, 'imagePetita') | imagine_filter('portada') }}" alt="logotip" title="logotip" />
 							</a>
+                {% endif %}
 							<div class="link">
 						<h3 class="titol_enllas"><a href="{{ enllas.link }}" target="_blank">{{ enllas.titol }}</a></h3>
 						{#<a href="{{ enllas.link }}" target="_blank">#}
