@@ -7,9 +7,9 @@
 	{% endif %}
 	
  	{% if menu=='jornades' %}
- 		<li ><a href="{{ path('jornada',{'titol':'art-i-educacio-encontres-i-desencontres'})}}" class="actiu">jornades</a></li>
+ 		<li ><a href="{{ path('jornades')}}" class="actiu">jornades</a></li>
  		{% else %}
- 		<li><a href="{{ path('jornada',{'titol':'art-i-educacio-encontres-i-desencontres'})}}">jornades</a></li>
+ 		<li><a href="{{ path('jornades')}}">jornades</a></li>
  	{% endif %}
 
      {% if menu=='projectes' %}
