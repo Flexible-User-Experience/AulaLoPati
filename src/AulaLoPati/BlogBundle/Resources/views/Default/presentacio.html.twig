@@ -11,6 +11,13 @@
 
      {{ presentacio.descripcio |raw }}
 
+    {% if presentacio.document1Name  %}
+
+         <div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(presentacio, 'document1')  }}' target="_blank">
+        <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
+        {{ presentacio.titolDocument1 }}</a></div>
+    {% endif %}
+
      {% if presentacio.imageGran1Name  %}
          <img src='{{ vich_uploader_asset(presentacio, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : Presentació {{ presentacio.titol }}"/>
          <p class="peu_foto">{{ presentacio.peuImageGran1 }} </p>

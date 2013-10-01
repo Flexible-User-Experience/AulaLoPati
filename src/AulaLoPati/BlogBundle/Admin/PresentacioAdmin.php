@@ -31,7 +31,7 @@ class PresentacioAdmin extends Admin
 		->add('descripcio', 'textarea', array('attr' => array('class' => 'tinymce',
 				 'data-theme'=>'simple',
 				'style' => 'width: 600px; height: 400px;'),'label' => 'Descripció'))
-				
+
 				//->add('actiu', null, array('label' => 'Actiu ?','required'  => false))
 		//->add('imgPetitaGris',null,array('required'  => false))
 		//->add('imgPetitaMagenta',null,array('required'  => false))
@@ -57,27 +57,27 @@ class PresentacioAdmin extends Admin
 //		->with('Imatge en miniatura')
 //		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 //		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
-		
+
 		->with('Imatge principal')
 		->add('imageGran1', 'file', array('label' => 'Arxiu', 'required'=>false))
 		->add('imageGran1Name', null, array('label' => 'Nom', 'required'=>false, 'read_only'=>true,))
 		->add('peuImageGran1', null, array('label' => 'Peu imatge', 'required'=>false))
 
-		
-		
+
+
 		/*->with('Portada')
 		->add('portada', null, array('label' => 'És portada ?', 'required' => false))
 		->add('imagePetita', 'file', array('label' => 'Imatge petita gris', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
 		->add('imagePetita2', 'file', array('label' => 'Imatge petita vermell', 'required'=>false))
 		->add('imagePetita2Name', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))*/
-		
-		/*->with('Documents adjunts')
+
+		->with('Documents adjunts')
 		->add('document1', 'file', array('label' => 'Arxiu 1', 'required'=>false))
 		->add('document1Name', null, array('label' => 'Nom 1', 'required'=>false, 'read_only'=>true,))
 		->add('titolDocument1', null, array('label' => 'Títol 1', 'required'=>false))
-		//->end()
-		
+		->end()
+		/*
 		->add('document2', 'file', array('label' => 'Arxiu 2', 'required'=>false))
 		->add('document2Name', null, array('label' => 'Nom 2', 'required'=>false, 'read_only'=>true,))
 		->add('titolDocument2', null, array('label' => 'Títol 2', 'required'=>false))
