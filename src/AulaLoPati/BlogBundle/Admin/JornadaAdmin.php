@@ -19,10 +19,10 @@ class JornadaAdmin extends Admin
 {
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection
-            ->remove('create')
-            ->remove('delete')
-        ;
+//        $collection
+//            ->remove('create')
+//            ->remove('delete')
+//        ;
     }
 	protected function configureFormFields(FormMapper $formMapper)
 	{
