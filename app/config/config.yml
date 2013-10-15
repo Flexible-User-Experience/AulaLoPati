@@ -17,7 +17,6 @@ framework:
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
     trust_proxy_headers: false # Whether or not the Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
-    trusted_proxies: ~
     session:         ~
 
 # Twig Configuration
@@ -50,7 +49,6 @@ doctrine:
         charset:  UTF8
         types:
             json: Sonata\Doctrine\Types\JsonType
-
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
@@ -59,9 +57,7 @@ doctrine:
             SonataUserBundle: ~
             FOSUserBundle: ~ 
 
-# Swiftmailer Configuration
-
-# Sonata Admin Bundle             
+# Sonata Admin Bundle
 sonata_admin:
   title:  "Administrador de continguts"
   title_logo: /images/logo_lopati_inverted.png
@@ -72,16 +68,10 @@ sonata_admin:
     list: SonataAdminBundle:CRUD:list.html.twig
     show: SonataAdminBundle:CRUD:show.html.twig
     edit: SonataAdminBundle:CRUD:edit.html.twig
-  dashboard:
+  dashboard:  
     groups:
-        Presentacio:
         Jornades:
-        Projectes:
-        Recursos:
-        Arxiu:
-        #Categories:
-
-
+        Enllaços:
 
 # Sonata Block Bundle
 sonata_block:
@@ -109,6 +99,7 @@ sonata_user:
                 controller:     SonataAdminBundle:CRUD
                 translation:    SonataUserBundle
 
+# FOS User Bundle
 fos_user:
     db_driver:      orm # can be orm or odm
     firewall_name:  main
@@ -117,6 +108,7 @@ fos_user:
     group:
         group_class: Application\Sonata\UserBundle\Entity\Group
 
+# Vich Uploader
 vich_uploader:
     db_driver: orm
     mappings:
@@ -125,13 +117,13 @@ vich_uploader:
             upload_destination: %kernel.root_dir%/../web/uploads/images
             inject_on_load: false
             delete_on_remove: true
-            
         pdf:
             uri_prefix: /uploads/documents
             upload_destination: %kernel.root_dir%/../web/uploads/documents
             inject_on_load: false
             delete_on_remove: true
-# TinyMCE Bundle 
+
+# TinyMCE Bundle
 stfalcon_tinymce:
     include_jquery: false
     tinymce_jquery: true
@@ -202,21 +194,16 @@ liip_imagine:
         imatge_pagina:
             quality: 90
             filters:
-                thumbnail: { size: [615,null], mode: outbound }
-                
+                thumbnail: { size: [710,null], mode: outbound }
         portada:
             quality: 90
             filters:
                 thumbnail: { size: [155,null], mode: outbound }
-                
-                
         thumb_imatge_pagina:
             quality: 70
             filters:
                 thumbnail: { size: [155,null], mode: outbound }
-
         thumb_imatge_pagina_arbre_continguts:
             quality: 70
             filters:
                 thumbnail: { size: [50,null], mode: outbound }
-     
