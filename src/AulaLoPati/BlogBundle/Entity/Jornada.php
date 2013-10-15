@@ -8,10 +8,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use AulaLoPati\BlogBundle\Util\Util;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-
-
-
-
 /**
  * @ORM\Entity(repositoryClass="AulaLoPati\BlogBundle\Repository\JornadaRepository")
  * @ORM\HasLifecycleCallbacks
@@ -26,8 +22,7 @@ class Jornada {
 	 * @ORM\GeneratedValue
 	 */
 	protected $id;
-	
-	
+
 	/**
 	 * @ORM\OneToMany(targetEntity="AulaLoPati\BlogBundle\Entity\Ponencia", mappedBy="jornada", cascade={"persist", "remove"} )
 	 * @ORM\OrderBy({"actiu" = "DESC", "data_publicacio" = "ASC"})
@@ -96,10 +91,7 @@ class Jornada {
 	 * 
 	 */
 	protected $lloc = NULL;
-	
 
-
-	
 	/**
 	 * @ORM\Column(type="string", length=255, nullable=true )
 	 */
@@ -367,9 +359,7 @@ class Jornada {
 	public function __construct() {
 		$this->ponencies = new \Doctrine\Common\Collections\ArrayCollection();
 	}
-	
 
-	
 	/**
 	 * Set translations
 	 * @param ArrayCollection $translations
@@ -387,9 +377,6 @@ class Jornada {
 	public function getTranslations() {
 		return $this->translations;
 	}
-	
-
-	
 
 	/**
 	 * Get id
@@ -415,13 +402,10 @@ class Jornada {
 	public function getTipus() {
 		return $this->tipus;
 	}
-	
-	
 
 	public function setArxiu($tipus) {
 		$this->arxiu = $tipus;
 	}
-	
 
 	public function getArxiu() {
 		return $this->arxiu;
@@ -446,14 +430,9 @@ class Jornada {
 	public function getTitol() {
 		return $this->titol;
 	}
-	
-	
-	
+
 	public function setSlug($titol) {
-		
 		$this->slug=$titol;
-		
-	
 	}
 	
 	/**

@@ -92,7 +92,7 @@ class PonenciaAdmin extends Admin
         $datagridMapper
             ->add('titol')
             ->add('actiu')
-            ->add('data_publicacio')
+            //->add('data_publicacio')
         ;
     }
 }
