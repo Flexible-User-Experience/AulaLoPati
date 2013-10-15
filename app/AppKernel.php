@@ -14,27 +14,30 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new JMS\AopBundle\JMSAopBundle(),
-            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
         	
         	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+
         	new Sonata\BlockBundle\SonataBlockBundle(),
-        	//new Sonata\CacheBundle\SonataCacheBundle(),
+        	new Sonata\CacheBundle\SonataCacheBundle(),
         	new Sonata\jQueryBundle\SonatajQueryBundle(),
         	new Sonata\AdminBundle\SonataAdminBundle(),
         	new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+
         	new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+
         	new Vich\UploaderBundle\VichUploaderBundle(),
+
         	new Liip\ImagineBundle\LiipImagineBundle(),
 			
         	new FOS\UserBundle\FOSUserBundle(),
-			new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-			new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+
         	new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-        		
         		
             new AulaLoPati\BlogBundle\BlogBundle(),
         );
