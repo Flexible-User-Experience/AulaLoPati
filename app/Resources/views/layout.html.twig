@@ -10,64 +10,20 @@
         <link href="{{ asset('/bundles/blog/css/estil.css') }}" rel="stylesheet" type="text/css" />
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
     </head>
-    
-    
     <body>
-    <div id="fons"><img src="{{ asset('images/logo_AulaLoPati.jpg') }}" usemap="#homemap" alt="logo aula al pati" title="logotip aula al pati" /></div>
-    <map name="homemap">
-    <area shape="rect" coords="0,0,245,213" href="{{ path('presentacio') }}" alt="home">
-    </map>
-    <h1 class="titol_ocult">L'Aula al Pati</h1>
+        <div id="fons"><img src="{{ asset('images/logo_AulaLoPati.jpg') }}" usemap="#homemap" alt="logo aula al pati" title="logotip aula al pati" /></div>
+        <map name="homemap">
+            <area shape="rect" coords="0,0,245,213" href="{{ path('presentacio') }}" alt="home">
+        </map>
+        <h1 class="titol_ocult">L'Aula al Pati</h1>
         <h2 class="titol_ocult">interseccions entre art i educació</h2>
-    
-   		<div id="contacte"><a href="mailto:aula@lopati.cat"><img src="/images/icona-correu.png" width=27 alt="contacte" title="sobre contacte" /></a></div>
+   		<div id="contacte">
+            <a href="https://www.facebook.com/laula.alpati"><img src="/images/icona-correu.png" width=27 alt="facebook" title="facebook" /></a>
+            <a href="mailto:aula@lopati.cat"><img src="/images/icona-correu.png" width=27 alt="contacte" title="sobre contacte" /></a>
+        </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-       
 		{% block menu %} {% endblock %}
-		
-				        
-		 <div id="content">		        
-
-        {% block content %}
-        {% endblock %}
-        </div>
-{#         <div id="footer">#}
-{#   		<div id="organitza">#}
-{# 		       		<p>organitza:</p>#}
-{# 		       		<a href="http://www.lopati.cat" target="_blank"><img src="/images/logo_LoPati.jpg" alt="logotip lo pati" title="logotip lo pati"></a>#}
-{# 		</div>#}
-		   
-{# 		<div id="colabora">#}
-		
-{# 		       		<p>col·labora</p>#}
-{# 		       		<ul>#}
-{# 		       		<li>#}
-{# 		       		<a href="http://www.gencat.cat/ensenyament" target="_blank"><img src="/images/gencat_ensenyament.jpg" alt="logotip departament ensenyament" title="logotip departament ensenyament gencat"></a>#}
-{# 		       		</li><li>#}
-{# 		       		<a href="http://www.acvic.org/" target="_blank"><img src="/images/acvic.jpg"  alt="centre d'arts contemporanies" title="centre d'arts contemporanies"></a>#}
-{# 		       				</li></ul>#}
-{# 		  </div>#}
-{# 		    	<div id="suport">#}
-{# 		       		<p>amb el suport de:</p>#}
-{# 		       		       		<ul>#}
-{# 		       		<li>#}
-{# 		       		<a href="http://www.amposta.cat" target="_blank" style="position:relative; top:-10px"><img src="/images/ajuntament-amposta.jpg"  alt="logotip ajuntament amposta" title="ajuntament amposta"></a>#}
-		       		
-{# 		       		</li><li>#}
-{# 		       		<a href="http://www.gencat.cat/cultura" target="_blank"><img src="/images/gencat_cultura.jpg" alt="logotip departament cultura" title="logotip departament cultura gencat"></a>#}
-{# 		       		</li><li>#}
-{# 		       		<a href="http://www.diputaciodetarragona.cat" target="_blank"><img src="/images/diputacio_tarragona.jpg"  alt="logotip diputacio tarragona" title="logotip diputacio tarragona"></a>#}
-{# 		       		</li><li>#}
-{# 		       		<a href="http://www.museuterresebre.cat" target="_blank" style="position:relative; top:-10px"><img src="/images/logo-museu-terres-ebre.png" width=60 alt="logotip museu terres ebre" title="logotip museu terres ebre"></a>#}
-{# 		       		</li></ul>#}
-{# 			</div>#}
-     
-       
-{#        </div>#}
-  
-        
-        
-
+		<div id="content">{% block content %}{% endblock %}</div>
     </body>
 </html>
