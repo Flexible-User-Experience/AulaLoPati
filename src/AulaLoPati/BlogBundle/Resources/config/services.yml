@@ -3,7 +3,7 @@ services:
   sonata.aulalopati.admin.presentacio:
     class: AulaLoPati\BlogBundle\Admin\PresentacioAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Presentacio, label: presentacio }
+      - { name: sonata.admin, manager_type: orm, group: Presentació, label: presentació }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Presentacio

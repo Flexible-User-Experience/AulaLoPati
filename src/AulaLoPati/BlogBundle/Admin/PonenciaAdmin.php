@@ -76,9 +76,16 @@ class PonenciaAdmin extends Admin
 		->addIdentifier('titol', null, array('label' => 'Títol'))
 		->add('jornada')
 		->add('categoria')
-		->add('actiu')
+		->add('actiu', null, array('editable' => true))
 		//->add('data_publicacio', null, array('label'=>'Data publicació', 'template' => 'BlogBundle:Default:list_custom_date_field.html.twig'))
-		;
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    //'view' => array(),
+                    'edit' => array(),
+                ),
+                'label' => 'Acció'
+            ))
+        ;
 	}
 
 	protected $datagridValues = array(
@@ -90,8 +97,10 @@ class PonenciaAdmin extends Admin
 	protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('titol')
+            ->add('titol', null, array('label' => 'Títol'))
             ->add('actiu')
+            ->add('jornada')
+            ->add('categoria')
             //->add('data_publicacio')
         ;
     }

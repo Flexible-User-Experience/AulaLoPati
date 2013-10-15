@@ -73,8 +73,11 @@ sonata_admin:
     edit: SonataAdminBundle:CRUD:edit.html.twig
   dashboard:  
     groups:
-        Jornades:
-        Enllaços:
+      Presentació:
+      Jornades:
+      Projectes:
+      Recursos:
+      Arxiu:
 
 # Sonata Block Bundle
 sonata_block:
@@ -150,7 +153,6 @@ stfalcon_tinymce:
             menubar: false
             toolbar1: "bold,italic,underline,undo,redo,link,unlink,removeformat,cleanup,code,preview"
 
-            
 # Liip Imagine Bundle            
 liip_imagine:
     cache_prefix:         /uploads/cache
