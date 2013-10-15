@@ -15,69 +15,67 @@
 	font-style: normal;
 }
 
-
-
 body{
-font-family: Helvetica, Arial, Sans-Serif;
-background-color:#FFF;
-width:960px;
-margin: 0 auto;
-color:#666;	
+    font-family: Helvetica, Arial, Sans-Serif;
+    background-color:#FFF;
+    width:960px;
+    margin: 0 auto;
+    color:#666;
 }
+
 h1,h2,h3,h4,h5, #menu{
 	font-family: 'Conv_DINPro-Medium';
 }
+
 a{
 	color:#1D6880;
 	text-decoration:none;
 }
+
 p{
 	margin: 10px 0;
 	font-size:0.95em;
 	line-height:1.3em;
 }
+
 .titol_ocult{
 	display:none;
-	
 }
+
 #fons{
     margin-top:25px;
-
 }
+
 #menu{
 	position:relative;
 	top: -145px;
 	width:245px;
-	
 	text-align:right;
 	color:#1D6880;
 	font-weight:bold;
 	float:left;
 	margin-bottom:35px;
-	
 }
+
 #menu ul li{
-	
 	font-size:1em;
 	margin: 10px 0;
-	
 }
+
 #menu ul li a:hover{
 	color: #666;
 }
 
 #content{
-		position:relative;
-		top: -145px;
-		margin-left:100px;
-		float:left;
-		width:615px;
-		margin-bottom: 35px;
-		
-	
+    position:relative;
+    top: -145px;
+    margin-left:100px;
+    float:left;
+    width:615px;
+    margin-bottom: 35px;
 }
-#footer{
 
+#footer{
 	border-top-style:solid;
 	border-width:1px;
 	border-color: #CDCDCD;
@@ -85,48 +83,54 @@ p{
 	height:300px;
 	clear:both;
 }
+
 #footer ul{
-margin-top:20px;
+    margin-top:20px;
 }
+
 #footer ul li{
 	float:left;
 	width:auto;
 	margin: 0 5px;
-	
-	
 }
+
 #footer ul li p{
 	font-size:0.95em;
-margin-bottom:20px;
-	
-	
+    margin-bottom:20px;
 }
+
 #footer #organitza{
 	margin-left:345px;
 	width: 80px;
 	float:left;
 }
+
 #footer #colabora{
 	margin:0 15px;
 	width: 160px;
-float:left;
+    float:left;
 }
+
 #footer #suport{
 	width: 320px;
 	float:left;
 }
 
 #footer img{
-width:70px;
-	
+    width:70px;
 }
+
+div#content div#suport ul li {
+    float: left;
+    margin-right: 20px;
+}
+
 #jornades{
 	margin-top:10px;
-	
 }
+
 .actiu{
 	color: #666;
-	
 }
 
 .separador{
@@ -137,12 +141,10 @@ width:70px;
 	border-width:1px;
 	color:#CDCDCD;
 	clear:both;
-	
 }
 
 .separador_lloc{
 	position:relative;
-
 	width:auto;
 	margin-top: 25px;
 	margin-bottom:25px;
@@ -158,22 +160,24 @@ width:70px;
 	background-color:#FFF;
 	background-repeat:no-repeat;
 	background-position:290px 0px;
-	
 }
+
 strong, b, .bold {
-font-weight: bold;
+    font-weight: bold;
 }
+
 .titol_jornada, .titol_ponencia, .titol_enllas, .titol_activitat{
 	font-size:1.2em;
 	color:#1D6880;
 	font-weight: bold;
 	margin-bottom:10px;
-	
 }
+
 .titol_ponencia,.titol_activitat{
 	margin-top:15px;
 	
 }
+
 .titol_jornada p{
 	margin:0;
 }
@@ -183,26 +187,26 @@ font-weight: bold;
 	margin-top:10px;
 	font-size:0.95em;
 	line-height:1.3em;
-	
 }
+
 .descripcio{
 	margin-bottom:30px;
 }
+
 .autor{
 	color:black;
 	font-weight:bold;
-	
 }
+
 .descripcio p{
 	margin:0;
 	font-size:0.95em;
 	line-height:1.3em;
-	
 }
+
 .peu_foto{
 	margin-top:0px;
 	text-align:right;
-	
 }
 
 .post-content {
@@ -211,14 +215,11 @@ font-weight: bold;
 }
 
 .post-content h2 {
-
-  
   	font-size:1.2em;
 	color:#1D6880;
 	font-weight: bold;
 	margin-bottom:15px;
 }
-
 
 .contact-form label {
   display: block;
@@ -238,168 +239,168 @@ font-weight: bold;
   margin-top: 5px;
 }
 
-
 .success{
 	background-color: #9BA7CC;
 	padding: 3px 0;
 	text-align:center;
 	margin-bottom: 20px;
-	
 }
+
 .jornada{
 	min-height:155px;
-	
 }
+
 .columna_esquerra{
 	float:left;
 	margin-bottom: 25px;
-
 }
+
 .columna_dreta{
 	float:left;
 	width:440px;
 	margin-left:20px;
 	margin-bottom: 25px;
 }
+
 .fondo{
 	background-repeat:no-repeat;
 	background-position:0px 0px;
 	padding-left:180px;
-
-	
 }
+
 .ponencia{
 	margin:20px 0;
-	
 }
+
 #contacte{
 	position:relative;
 	top: -233px;
 	left: 903px;
 	width: 60px;
-	
 }
+
 .enllas_imatge{
 	float:left;
 	margin-bottom:25px;
-	
 }
+
 .link{
 	margin-left:20px;
 	width:400px;
 	float:left;
 	margin-bottom:20px;
 }
+
 .icona_mesinfo{
 	width:18px;
-	
 }
+
 .icona_descarrega{
 	position:relative;
 	top:5px;
 	width:18px;
-	
 }
-#credits{
 
+#credits{
 		font-weight: 500;
 }
+
 #credits p{
 	margin:3px;
 	line-height: 1.2em;
 }
-#credits .bold{
 
+#credits .bold{
 	font-weight: bold;
 	margin:0;
 }
+
 #credits ul li img{
 	width:130px;
 	margin: 0 10px;
 }
+
 #credits ul li{
 	float:left;
-	
 }
+
 #credits h3{
 	margin-bottom:3px;
 	font-weight:normal:
-	
 }
+
 #credits .block_credits{
 	margin: 25px 0;
-	
 }
+
 #credits h2{
 	font-size:1.2em;
 	color:#1D6880;
 	font-weight: bold;
 	margin-bottom:10px;
-	
 }
+
 #credits p{
 	margin:0;
-	
 }
+
 #credits #organitza{
 	height:120px;
 	margin-bottom:20px;
-	
 }
+
 #credits #organitza img{
 	width: 120px;
-	
 }
+
 #credits #colabora, #suport{
 	height:100px;
-	
 }
+
 .link_sense_estil{
 	color: #666;
 	visited: none;
-	
-	
 }
+
 #colaboradors p:first-child{
 	margin:0;
-	
 }
+
 #colaboradors p:nth-child(2) {
 	margin:0;
-	
 }
-
 
 #colaboradors p{
-	
 	margin:5px 0;
-	
 }
+
 .icona_mesinfo{
     margin-top:10px;
-
 }
-#presentacio img{
 
+#presentacio img{
     margin-top:10px;
 }
+
 img.petita{
     width:100px !important;
 }
+
 img.molt_petita{
     width:85px !important;
 }
+
 #ponencia_capçalera, #activitat_capçalera{
     float:left;
     width:100%;
-
 }
+
 #imatge_ponencia, #imatge_activitat{
     margin-right:25px;
     float:left;
     margin-bottom:20px;
-
 }
+
 p.text_petit{
     font-size:0.8em;
 
