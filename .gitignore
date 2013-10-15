@@ -7,7 +7,6 @@ vendor/*
 web/bundles/*
 web/uploads/cache/*
 web/uploads/*
-composer.lock
 composer.phar
 *~
 *.sublime-project
