@@ -30,10 +30,10 @@ class Activitat {
 	/** @ORM\Column(type="string", length=50, nullable=true) */
 	protected $tipus;
 	
-	/** @ORM\ManyToOne(targetEntity="Projecte", inversedBy="projecte") */
+	/** @ORM\ManyToOne(targetEntity="Projecte", inversedBy="activitats") */
 	protected $projecte;
 	
-	/** @ORM\ManyToOne(targetEntity="CategoriaProjectes", inversedBy="activitat") */
+	/** @ORM\ManyToOne(targetEntity="CategoriaProjectes") */
 	protected $categoria;
 	
 	/** 

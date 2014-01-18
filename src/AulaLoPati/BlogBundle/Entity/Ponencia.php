@@ -30,10 +30,10 @@ class Ponencia {
 	/** @ORM\Column(type="string", length=50, nullable=true) */
 	protected $tipus;
 	
-	/** @ORM\ManyToOne(targetEntity="Jornada", inversedBy="jornada") */
+	/** @ORM\ManyToOne(targetEntity="Jornada", inversedBy="ponencies") */
 	protected $jornada;
 	
-	/** @ORM\ManyToOne(targetEntity="Categoria", inversedBy="ponencia") */
+	/** @ORM\ManyToOne(targetEntity="Categoria") */
 	protected $categoria;
 	
 	/** 
