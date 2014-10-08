@@ -8,34 +8,30 @@ presentacio:
 
 projectes:
     pattern:  /projectes/
-    defaults: { _controller: BlogBundle:Default:projectes }
-     
+    defaults: { _controller: BlogBundle:Default:llistaProjectes }
+
+projecte:
+    pattern:  /projecte/{titol}/
+    defaults: { _controller: BlogBundle:Default:projecte }
+
 publicacions:
     pattern:  /publicacions/
     defaults: { _controller: BlogBundle:Default:publicacions }
 
 jornada:
-    pattern:  /jornades/{titol}/
+    pattern:  /jornada/{titol}/
     defaults: { _controller: BlogBundle:Default:jornada }
     
 jornades:
     pattern:  /jornades/
     defaults: { _controller: BlogBundle:Default:llistaJornades }
 
-projecte:
-    pattern:  /projectes/{titol}/
-    defaults: { _controller: BlogBundle:Default:projecte }
-
-projectes:
-    pattern:  /projectes/
-    defaults: { _controller: BlogBundle:Default:llistaProjectes }
-
 arxiu:
-    pattern:  /arxiu/
+    pattern:  /convocatories/
     defaults: { _controller: BlogBundle:Default:llistaArxius }
 
 arxiu_detall:
-    pattern:  /arxiu/{titol}/
+    pattern:  /convocatoria/{titol}/
     defaults: { _controller: BlogBundle:Default:arxiu }
 
 contacte:

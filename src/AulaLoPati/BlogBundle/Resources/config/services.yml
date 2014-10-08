@@ -17,7 +17,16 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Jornada
       - BlogBundle:Admin
-  
+
+  sonata.aulalopati.admin.arxiu:
+    class: AulaLoPati\BlogBundle\Admin\ArxiuAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Convocatòries, label: convocatòria }
+    arguments:
+      - null
+      - AulaLoPati\BlogBundle\Entity\Arxiu
+      - BlogBundle:Admin
+
   sonata.aulalopati.admin.ponencia:
     class: AulaLoPati\BlogBundle\Admin\PonenciaAdmin
     tags:
@@ -46,15 +55,6 @@ services:
       - BlogBundle:Admin
 
 
-  sonata.aulalopati.admin.arxiu:
-    class: AulaLoPati\BlogBundle\Admin\ArxiuAdmin
-    tags:
-      - { name: sonata.admin, manager_type: orm, group: Arxiu, label: arxiu }
-    arguments:
-      - null
-      - AulaLoPati\BlogBundle\Entity\Arxiu
-      - BlogBundle:Admin
-
   sonata.aulalopati.admin.categoria:
     class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
     tags:
@@ -73,7 +73,6 @@ services:
       - AulaLoPati\BlogBundle\Entity\CategoriaProjectes
       - BlogBundle:Admin
 
-      
   sonata.aulalopati.admin.enllas:
     class: AulaLoPati\BlogBundle\Admin\EnllasAdmin
     tags:

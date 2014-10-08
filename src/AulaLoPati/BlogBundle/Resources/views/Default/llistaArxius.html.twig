@@ -1,84 +1,64 @@
 {% extends '::layout.html.twig' %}
 
 {% block title %}Arxiu{% endblock %}
+
 {% block menu %}
-{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'arxiu'} %}
+    {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'arxiu'} %}
 {% endblock %}
- {% block content %}
 
+{% block content %}
+    <div id="arxius">
+        {% for arxiu in arxius %}
 
+            {% if arxiu.imagePetitaName is not null %}
+                <div class="arxiu">
+                    <div class="columna_esquerra">
+                        <a href="{{ path('arxiu_detall',{'titol':arxiu.slug}) }}"> <img id="id{{ arxiu.id }}"
+                                                                                        src="{{ vich_uploader_asset(arxiu, 'imagePetita') | imagine_filter('portada') }}"
+                                                                                        alt="{{ arxiu.titol }}"
+                                                                                        title="{{ arxiu.titol }}"></a>
+                    </div>
+                    <div class="columna_dreta">
+                        <h2 class="titol_jornada"><a
+                                    href="{{ path('arxiu_detall',{'titol':arxiu.slug}) }}">{{ arxiu.titol|raw }}</a>
+                        </h2>
 
-         <div id="arxius">
-             {% for arxiu in arxius %}
+                        <div class="resum">
+                            {{ arxiu.resum }}
+                        </div>
+                        <a href="{{ path('arxiu_detall',{'titol':arxiu.slug}) }}">
+                            <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}"
+                                 alt="icona més info" title="icona més informació"/>
+                        </a>
+                    </div>
+                </div>
+                {% if arxiu.dataRealitzacio is not null %}
+                    <div class="separador_lloc">
+                        {{ arxiu.dataRealitzacio }}
+                    </div>
+                {% else %}
+                    <div class="separador"></div>
+                {% endif %}
+            {% else %}
+                <h2 class="titol_jornada"><a
+                            href="{{ path('arxiu_detall',{'titol':arxiu.slug}) }}">{{ arxiu.titol|raw }}</a></h2>
 
-                 {%  if arxiu.imagePetitaName is not null%}
-                     <div class="arxiu">
-                         <div class="columna_esquerra">
-                             <a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">  <img id="id{{ arxiu.id }}" src="{{ vich_uploader_asset(arxiu, 'imagePetita') | imagine_filter('portada') }}" alt="{{ arxiu.titol }}" title="{{ arxiu.titol }}"></a>
+                <div class="resum">
+                    {{ arxiu.resum }}
+                </div>
+                <a href="{{ path('arxiu_detall',{'titol':arxiu.slug}) }}">
+                    <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info"
+                         title="icona més informació"/>
+                </a>
 
-                         </div>
-
-
-                         <div class="columna_dreta">
-                             <h2 class="titol_jornada"><a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">{{ arxiu.titol|raw }}</a></h2>
-
-                             <div class="resum">
-                                 {{ arxiu.resum}}
-                             </div>
-                             <a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">
-                                 <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
-                             </a>
-
-                         </div>
-                     </div>
-                     {% if arxiu.dataRealitzacio is not null %}
-
-                         <div class="separador_lloc">
-                             {{ arxiu.dataRealitzacio }}
-                         </div>
-
-
-                     {% else %}
-
-                         <div class="separador"></div>
-
-                     {% endif %}
-
-                 {% else %}
-
-
-                     <h2 class="titol_jornada"><a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">{{ arxiu.titol|raw }}</a></h2>
-
-
-
-
-
-                     <div class="resum">
-                         {{ arxiu.resum}}
-
-                     </div>
-                     <a href="{{ path('arxiu_detall',{'titol':arxiu.slug})}}">
-                         <img class="icona_mesinfo" src="{{ asset('images/icona-mesinfo.png') }}" alt="icona més info" title="icona més informació" />
-                     </a>
-
-                     {% if arxiu.dataRealitzacio is not null %}
-
-                         <div class="separador_lloc">
-                             {{ arxiu.dataRealitzacio }}
-                         </div>
-
-
-                     {% else %}
-
-                         <div class="separador"></div>
-
-                     {% endif %}
-                 {% endif %}
-
-             {% endfor %}
-
-         </div>
-
-
-
+                {% if arxiu.dataRealitzacio is not null %}
+                    <div class="separador_lloc">
+                        {{ arxiu.dataRealitzacio }}
+                    </div>
+                {% else %}
+                    <div class="separador"></div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

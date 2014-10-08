@@ -1,92 +1,142 @@
 {% extends '::layout.html.twig' %}
 
 {% block title %}Crèdits{% endblock %}
+
 {% block menu %}
-{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'credits'} %}
+    {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'credits'} %}
 {% endblock %}
- {% block content %}
- <div id="credits">
-	<h2>L'AULA AL PATI</h2>
-	 
-	<div class="block_credits">
-	<p>Direcció</p>
-	<p class="bold">Alfred Porres Pla</p>
-	</div>
 
-     <div class="block_credits">
-         <p>Coordinació</p>
-         <p class="bold">Vicent Fibla (Lo Pati)</p>
-     </div>
+{% block content %}
+    <div id="credits">
+        <h2>L'AULA AL PATI</h2>
 
-     <div class="block_credits">
-         <p>Col·labora</p>
-         <p class="bold">CRP Montsià</p>
-     </div>
-	 
-	<div class="block_credits">
-	<p>Disseny:</p>
-	<p class="bold">Maria Bernad</p>
-    <p class="bold">Ana López</p>
-	</div>
-	
-	<div class="block_credits">
-	<p>Desenvolupament web:</p>
-	<p class="bold"><a class="link_sense_estil" href="http://www.flux.cat/ca/inici" target="_blank">Flux</a></p>
-	</div>	
-	
-	<div class="separador"></div>
-	
-	<div class="block_credits" id="colaboradors">
-	<p>Col·laboracions:</p>
-        <p>2013</p>
-        <p><span class="bold">Laura Cardona, Ester g. Mecías, Cèlia Prats i Meritxell Romanos (Les Salonnières)</span>, col·lectiu artístic indisciplinari  que, des de 2006, desenvolupa projectes artístics i educatius en múltiples àmbits.</p>
-        <p><span class="bold">Diego del Pozo Barriuso</span>, artista, productor cultural i professor a la Facultat de Belles Arts de la Universitat de Salamanca.</p>
-        <p><span class="bold">Montse Romaní</span>, investigadora a la Universitat de Barcelona. Programadora audiovisual i comissària en art contemporani.</p>
+        <div class="block_credits">
+            <p>Direcció</p>
+
+            <p class="bold">Alfred Porres Pla</p>
+        </div>
+
+        <div class="block_credits">
+            <p>Coordinació</p>
+
+            <p class="bold">Vicent Fibla (Lo Pati)</p>
+        </div>
+
+        <div class="block_credits">
+            <p>Col·labora</p>
+
+            <p class="bold">CRP Montsià</p>
+        </div>
+
+        <div class="block_credits">
+            <p>Disseny:</p>
+
+            <p class="bold">Maria Bernad</p>
+
+            <p class="bold">Ana López</p>
+        </div>
+
+        <div class="block_credits">
+            <p>Desenvolupament web:</p>
+
+            <p class="bold"><a class="link_sense_estil" href="http://www.flux.cat/ca/inici" target="_blank">Flux</a></p>
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="block_credits" id="colaboradors">
+            <p>Col·laboracions:</p>
+
+            <p>2013</p>
+
+            <p>
+                <span class="bold">Laura Cardona, Ester g. Mecías, Cèlia Prats i Meritxell Romanos (Les Salonnières)</span>,
+                col·lectiu artístic indisciplinari que, des de 2006, desenvolupa projectes artístics i educatius en
+                múltiples àmbits.</p>
+
+            <p><span class="bold">Diego del Pozo Barriuso</span>, artista, productor cultural i professor a la Facultat
+                de Belles Arts de la Universitat de Salamanca.</p>
+
+            <p><span class="bold">Montse Romaní</span>, investigadora a la Universitat de Barcelona. Programadora
+                audiovisual i comissària en art contemporani.</p>
+        </div>
+        <p>2012</p>
+
+        <p><span class="bold">Jordi Canudas</span>, artista visual i professor de l'escola Massana Centre d'Art i
+            Disseny de Barcelona UAB.</p>
+
+        <p><span class="bold">LaFundició</span>, cooperativa que es situa a l'encreuament entre les pràctiques
+            artístiques i culturals i l'educació.</p>
+
+        <p><span class="bold">Ramon Parramon</span>, director d'ACVic Centre d'Arts Contemporànies i del projecte
+            col·lectiu Idensitat.</p>
+
+        <p><span class="bold">Marta Ricart</span>, artista, profesora i investigadora, cofundadora de l'entitat Teleduca
+            i de l'associació Artibarri.</p>
+
+        <p><span class="bold">Victoria Rodríguez</span>, coordinadora de l'area d'educació formal del Museu Nacional
+            Centre d'Art Reina Sofia.</p>
     </div>
-     <p>2012</p>
-	<p><span class="bold">Jordi Canudas</span>, artista visual i professor de l'escola Massana Centre d'Art i Disseny de Barcelona UAB.</p>
-	<p><span class="bold">LaFundició</span>, cooperativa que es situa a l'encreuament entre les pràctiques artístiques i culturals i l'educació.</p>
-	<p><span class="bold">Ramon Parramon</span>, director d'ACVic Centre d'Arts Contemporànies i del projecte col·lectiu Idensitat.</p>	
-	<p><span class="bold">Marta Ricart</span>, artista, profesora i investigadora, cofundadora de l'entitat Teleduca i de l'associació Artibarri.</p>
-	<p><span class="bold">Victoria Rodríguez</span>, coordinadora de l'area d'educació formal del Museu Nacional Centre d'Art Reina Sofia.</p>
-	</div>
-	
-	<div class="separador"></div>
-        <div id="organitza">
-            <p>organitza:</p>
-            <br>
-            <a href="http://www.lopati.cat" target="_blank"><img src="/images/logo_LoPati.jpg" alt="logotip lo pati" title="logotip lo pati"></a>
-		</div>
-		<div id="colabora">
-		
-		       		<p>col·labora:</p>
-		       		<br>
-		       		<ul>
-		       		<li>
-		       		<a href="http://www.gencat.cat/ensenyament" target="_blank"><img src="/images/gencat_ensenyament.jpg" alt="logotip departament ensenyament" title="logotip departament ensenyament gencat"></a>
-		       		</li><li>
-		       		<a href="http://www.acvic.org/" target="_blank"><img src="/images/acvic.jpg"  alt="centre d'arts contemporanies" title="centre d'arts contemporanies"></a>
-		       				</li></ul>
-		  </div>
-		    	<div id="suport">
-		       		<p>amb el suport de:</p>
-		       		<br>
-		       		<br>
-		       		       		<ul>
-		       		<li>
-		       		<a href="http://www.amposta.cat" target="_blank" style="position:relative; top:-10px"><img src="/images/ajuntament-amposta.jpg"  alt="logotip ajuntament amposta" title="ajuntament amposta" class="petita"></a>
-		       		
-		       		</li><li>
-		       		<a href="http://www.gencat.cat/cultura" target="_blank" style="position:relative; top:0px;"><img  src="/images/gencat_cultura.jpg" alt="logotip departament cultura" title="logotip departament cultura gencat" class="petita"></a>
-		       		</li><li>
-		       		<a href="http://www.diputaciodetarragona.cat" target="_blank" style="position:relative; top:14px"><img src="/images/diputacio_tarragona.jpeg"  alt="logotip diputacio tarragona" title="logotip diputacio tarragona" class="petita"></a>
-		       		</li><li>
-		       		<a href="http://www.museuterresebre.cat" target="_blank" style="position:relative; top: 0px"><img src="/images/logo-museu-terres-ebre.jpg"  alt="logotip museu terres ebre" title="logotip museu terres ebre" class="molt_petita"></a>
-		       		</li></ul>
-			</div>
-			
-			<div class="separador"></div>
-            <p style="margin-bottom:10px;" class="text_petit"><span class="bold">Reconeixement - NoComercial - SenseObraDerivada (by-nc-nd):</span> No es permet un ús comercial de l'obra original ni la generació d'obres derivades.</p>
-     <a href=" http://cat.creativecommons.org/llicencia/" target="_blank"  > <img src="/images/cc.png" alt="logip creative commons" class="petita"/></a>
-</div>
- {% endblock %}
+
+    <div class="separador"></div>
+
+    <div id="organitza">
+        <p>organitza:</p>
+        <br>
+        <a href="http://www.lopati.cat" target="_blank"><img src="/images/logo_LoPati.jpg" alt="logotip lo pati"
+                                                             title="logotip lo pati"></a>
+    </div>
+
+    <div id="colabora">
+        <p>col·labora:</p>
+        <br>
+        <ul>
+            <li>
+                <a href="http://www.gencat.cat/ensenyament" target="_blank"><img src="/images/gencat_ensenyament.jpg"
+                                                                                 alt="logotip departament ensenyament"
+                                                                                 title="logotip departament ensenyament gencat"></a>
+            </li>
+            <li>
+                <a href="http://www.acvic.org/" target="_blank"><img src="/images/acvic.jpg"
+                                                                     alt="centre d'arts contemporanies"
+                                                                     title="centre d'arts contemporanies"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="suport">
+        <p>amb el suport de:</p>
+        <br>
+        <br>
+        <ul>
+            <li>
+                <a href="http://www.amposta.cat" target="_blank" style="position:relative; top:-10px"><img
+                            src="/images/ajuntament-amposta.jpg" alt="logotip ajuntament amposta"
+                            title="ajuntament amposta" class="petita"></a>
+
+            </li>
+            <li>
+                <a href="http://www.gencat.cat/cultura" target="_blank" style="position:relative; top:0px;"><img
+                            src="/images/gencat_cultura.jpg" alt="logotip departament cultura"
+                            title="logotip departament cultura gencat" class="petita"></a>
+            </li>
+            <li>
+                <a href="http://www.diputaciodetarragona.cat" target="_blank" style="position:relative; top:14px"><img
+                            src="/images/diputacio_tarragona.jpeg" alt="logotip diputacio tarragona"
+                            title="logotip diputacio tarragona" class="petita"></a>
+            </li>
+            <li>
+                <a href="http://www.museuterresebre.cat" target="_blank" style="position:relative; top: 0px"><img
+                            src="/images/logo-museu-terres-ebre.jpg" alt="logotip museu terres ebre"
+                            title="logotip museu terres ebre" class="molt_petita"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="separador"></div>
+    <p style="margin-bottom:10px;" class="text_petit"><span class="bold">Reconeixement - NoComercial - SenseObraDerivada (by-nc-nd):</span>
+        No es permet un ús comercial de l'obra original ni la generació d'obres derivades.</p>
+    <a href=" http://cat.creativecommons.org/llicencia/" target="_blank"> <img src="/images/cc.png"
+                                                                               alt="logip creative commons"
+                                                                               class="petita"/></a>
+{% endblock %}

@@ -1,4 +1,11 @@
-# app/config/routing.yml
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_imagine:
+    resource: .
+    type:     imagine
+    
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
@@ -11,24 +18,3 @@ _sonata_admin:
 soanata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin
-    
-
-
- 
-
-
-    
-
-blog:
-    resource: "@BlogBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# Internal routing configuration to handle ESI
-#_internal:
-#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-#    prefix:   /_internal
-
-_imagine:
-    resource: .
-    type:     imagine
-    
