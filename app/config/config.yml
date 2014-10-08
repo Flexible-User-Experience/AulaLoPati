@@ -72,8 +72,8 @@ sonata_admin:
       Presentació:
       Jornades:
       Projectes:
+      Convocatòries:
       Recursos:
-      Arxiu:
 
 # Sonata Block Bundle
 sonata_block:
