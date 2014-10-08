@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <META NAME="keywords" CONTENT="art contemporani,xarxa centres arts visuals catalunya,amposta,terres de l'ebre,mergent,residencia artsites,paissatge,art urba,street,art,poesia,experimental,video,art digital,cultura contemprania,pensament,pedagogia,arte contemporaneo,coleccion,col·leccio,arxiu,archivo,mediateca,soriano montagut,carles santos">
-		<META NAME="description" CONTENT="Centre d'Art de les Terres de l'Ebre, amb seu a Amposta. Difusió, formació, producció, col·lecció i arxiu. Forma part de la Xarxa de Centres d'Arts Visuals de Catalunya.">
-        <title>L'Aula al Pati : {% block title %}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link href="{{ asset('/bundles/blog/css/reset.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('/bundles/blog/css/estil.css') }}" rel="stylesheet" type="text/css" />
-        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
-    </head>
-    <body>
-        <div id="fons"><img src="{{ asset('images/logo_AulaLoPati.jpg') }}" usemap="#homemap" alt="logo aula al pati" title="logotip aula al pati" /></div>
-        <map name="homemap">
-            <area shape="rect" coords="0,0,245,213" href="{{ path('presentacio') }}" alt="home">
-        </map>
-        <h1 class="titol_ocult">L'Aula al Pati</h1>
-        <h2 class="titol_ocult">interseccions entre art i educació</h2>
-   		<div id="contacte">
-            <a target="_blank" href="https://www.facebook.com/laula.alpati"><img src="/images/icona-facebook.png" alt="facebook" title="facebook" /></a>
-            <a href="mailto:aula@lopati.cat"><img src="/images/icona-correu.png" width=27 alt="contacte" title="sobre contacte" /></a>
-        </div>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-		{% block menu %} {% endblock %}
-		<div id="content">{% block content %}{% endblock %}</div>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="art contemporani,xarxa centres arts visuals catalunya,amposta,terres de l'ebre,mergent,residencia artsites,paissatge,art urba,street,art,poesia,experimental,video,art digital,cultura contemprania,pensament,pedagogia,arte contemporaneo,coleccion,col·leccio,arxiu,archivo,mediateca,soriano montagut,carles santos">
+    <meta name="description"
+          content="Centre d'Art de les Terres de l'Ebre, amb seu a Amposta. Difusió, formació, producció, col·lecció i arxiu. Forma part de la Xarxa de Centres d'Arts Visuals de Catalunya.">
+    <title>L'Aula al Pati : {% block title %}{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link href="{{ asset('/bundles/blog/css/reset.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('/bundles/blog/css/estil.css') }}" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
+</head>
+<body>
+<div id="fons"><img src="{{ asset('images/logo_AulaLoPati.jpg') }}" usemap="#homemap" alt="logo aula al pati"
+                    title="logotip aula al pati"/></div>
+<map name="homemap">
+    <area shape="rect" coords="0,0,245,213" href="{{ path('presentacio') }}" alt="home">
+</map>
+<h1 class="titol_ocult">L'Aula al Pati</h1>
+
+<h2 class="titol_ocult">interseccions entre art i educació</h2>
+
+<div id="contacte">
+    <a target="_blank" href="https://www.facebook.com/laula.alpati"><img src="/images/icona-facebook.png" alt="facebook"
+                                                                         title="facebook"/></a>
+    <a href="mailto:aula@lopati.cat"><img src="/images/icona-correu.png" width=27 alt="contacte"
+                                          title="sobre contacte"/></a>
+</div>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+{% block menu %} {% endblock %}
+<div id="content">{% block content %}{% endblock %}</div>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-29818278-4', 'lopati.cat');
-  ga('send', 'pageview');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-29818278-4', 'lopati.cat');
+    ga('send', 'pageview');
 </script>
-    </body>
+</body>
 </html>
