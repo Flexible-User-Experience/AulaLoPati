@@ -3,7 +3,7 @@ imports:
     - { resource: security.yml }
 
 parameters:
-    aulalopati.mail: 'comunicacio@aulalopati.cat'
+    aulalopati.mail: 'aula@lopati.cat'
 
 framework:
     #esi:             ~
