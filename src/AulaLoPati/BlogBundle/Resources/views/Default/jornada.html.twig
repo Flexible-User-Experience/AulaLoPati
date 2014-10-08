@@ -1,76 +1,67 @@
 {% extends '::layout.html.twig' %}
 
-{% block title %}Jornades : {{jornada |striptags}}{% endblock %}
+{% block title %}Jornades : {{ jornada |striptags }}{% endblock %}
+
 {% block menu %}
-{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'jornades'} %}
+    {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'jornades'} %}
 {% endblock %}
- {% block content %}
- 
 
-<div id="jornades">
+{% block content %}
+    <div id="jornades">
+        <h2 class="titol_jornada">{{ jornada.titol }}</h2>
 
+        <div class="descripcio">
+            {{ jornada.descripcio|raw }}
 
-			
-			<h2 class="titol_jornada">{{ jornada.titol }}</h2>
-			
-			<div class="descripcio">
-			{{ jornada.descripcio|raw }}
-			
-			</div>
-			
-			{% if jornada.imageGran1Name  %}
-				<img src='{{ vich_uploader_asset(jornada, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : Jornada {{ jornada.titol }}"/>
-						<p class="peu_foto">{{ jornada.peuImageGran1 }} </p>
-			
-			{% endif %}
-			
-			<div class="separador"></div>
-			
-			{%  for ponencia in ponencies %}
-                <div id="ponencia_capçalera">
+        </div>
 
-						{%  if ponencia.imagePetitaName is not null%}
+        {% if jornada.imageGran1Name %}
+            <img src='{{ vich_uploader_asset(jornada, 'imageGran1') | imagine_filter('imatge_pagina') }}'
+                 alt="L'Aula al Pati : Jornada {{ jornada.titol }}"/>
+            <p class="peu_foto">{{ jornada.peuImageGran1 }} </p>
+        {% endif %}
 
-                            <div id="imatge_ponencia">
-                                <img src="{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}" alt="imatge ponencia {{ ponencia.titol }}"/>
-                            </div>
-						{% else %}
+        <div class="separador"></div>
 
-						{% endif %}
-			
-						<div id="ponencia_dreta">
-						    {% if ponencia.document1Name  %}
-						        <div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">
-							    <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
-						        {{ ponencia.categoria }}</a></div>
-							    <h3 class="titol_ponencia"><a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1')  }}' target="_blank">{{ ponencia.titol }}</a></h3>
-						    {% else %}
-							 <div class="categoria">
-						        {{ ponencia.categoria }}
-                             </div>
+        {% for ponencia in ponencies %}
+            <div id="ponencia_capçalera">
 
-                             <h3 class="titol_ponencia">{{ ponencia.titol }}</h3>
-						    {% endif %}
-					    	<div class="autor"> {{ ponencia.autor}}</div>
-
-                        </div>
+                {% if ponencia.imagePetitaName is not null %}
+                    <div id="imatge_ponencia">
+                        <img src="{{ vich_uploader_asset(ponencia, 'imagePetita') | imagine_filter('portada') }}"
+                             alt="imatge ponencia {{ ponencia.titol }}"/>
                     </div>
-						<div class="descripcio ponencia">{{ ponencia.descripcio | raw}}</div>	
-					
-						{% if ponencia.dataRealitzacio is not null %}
-										
-										<div class="separador_lloc">
-										{{ ponencia.dataRealitzacio }}
-										</div>
-										
-				
-						{% else %}
-						
-										<div class="separador"></div>
-						
-						{% endif %}
-			{% endfor %}
-		
-</div>
+                {% endif %}
 
+                <div id="ponencia_dreta">
+                    {% if ponencia.document1Name %}
+                        <div class="categoria"><a rel='external' href='{{ vich_uploader_asset(ponencia, 'document1') }}'
+                                                  target="_blank">
+                                <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}"
+                                     alt="icona descarrega" title="icona descarrega"/>
+                                {{ ponencia.categoria }}</a></div>
+                        <h3 class="titol_ponencia"><a rel='external'
+                                                      href='{{ vich_uploader_asset(ponencia, 'document1') }}'
+                                                      target="_blank">{{ ponencia.titol }}</a></h3>
+                    {% else %}
+                        <div class="categoria">
+                            {{ ponencia.categoria }}
+                        </div>
+                        <h3 class="titol_ponencia">{{ ponencia.titol }}</h3>
+                    {% endif %}
+                    <div class="autor"> {{ ponencia.autor }}</div>
+
+                </div>
+            </div>
+            <div class="descripcio ponencia">{{ ponencia.descripcio | raw }}</div>
+
+            {% if ponencia.dataRealitzacio is not null %}
+                <div class="separador_lloc">
+                    {{ ponencia.dataRealitzacio }}
+                </div>
+            {% else %}
+                <div class="separador"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

@@ -1,76 +1,65 @@
 {% extends '::layout.html.twig' %}
 
-{% block title %}Projectes : {{projecte |striptags}}{% endblock %}
+{% block title %}Projectes : {{ projecte |striptags }}{% endblock %}
+
 {% block menu %}
-{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'projectes'} %}
+    {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'projectes'} %}
 {% endblock %}
- {% block content %}
- 
 
-<div id="jornades">
+{% block content %}
+    <div id="jornades">
+        <h2 class="titol_jornada">{{ projecte.titol }}</h2>
 
+        <div class="descripcio">
+            {{ projecte.descripcio|raw }}
+        </div>
+        {% if projecte.imageGran1Name %}
+            <img src='{{ vich_uploader_asset(projecte, 'imageGran1') | imagine_filter('imatge_pagina') }}'
+                 alt="L'Aula al Pati : projecte {{ projecte.titol }}"/>
+            <p class="peu_foto">{{ projecte.peuImageGran1 }} </p>
+        {% endif %}
+        <div class="separador"></div>
 
-			
-			<h2 class="titol_jornada">{{ projecte.titol }}</h2>
-			
-			<div class="descripcio">
-			{{ projecte.descripcio|raw }}
-			
-			</div>
-			
-			{% if projecte.imageGran1Name  %}
-				<img src='{{ vich_uploader_asset(projecte, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : projecte {{ projecte.titol }}"/>
-						<p class="peu_foto">{{ projecte.peuImageGran1 }} </p>
-			
-			{% endif %}
-			
-			<div class="separador"></div>
-			
-			{%  for activitat in activitats %}
-                <div id="activitat_capçalera">
+        {% for activitat in activitats %}
+            <div id="activitat_capçalera">
 
-						{%  if activitat.imagePetitaName is not null%}
+                {% if activitat.imagePetitaName is not null %}
 
-                            <div id="imatge_activitat">
-                                <img src="{{ vich_uploader_asset(activitat, 'imagePetita') | imagine_filter('portada') }}" alt="imatge activitat {{ activitat.titol }}"/>
-                            </div>
-						{% else %}
-
-						{% endif %}
-			
-						<div id="activitat_dreta">
-						    {% if activitat.document1Name  %}
-						        <div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(activitat, 'document1')  }}' target="_blank">
-							    <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
-						        {{ activitat.categoria }}</a></div>
-							    <h3 class="titol_activitat"><a rel='external' href='{{ vich_uploader_asset(activitat, 'document1')  }}' target="_blank">{{ activitat.titol }}</a></h3>
-						    {% else %}
-							 <div class="categoria">
-						        {{ activitat.categoria }}
-                             </div>
-
-                             <h3 class="titol_activitat">{{ activitat.titol }}</h3>
-						    {% endif %}
-					    	<div class="autor"> {{ activitat.autor}}</div>
-
-                        </div>
+                    <div id="imatge_activitat">
+                        <img src="{{ vich_uploader_asset(activitat, 'imagePetita') | imagine_filter('portada') }}"
+                             alt="imatge activitat {{ activitat.titol }}"/>
                     </div>
-						<div class="descripcio activitat">{{ activitat.descripcio | raw}}</div>	
-					
-						{% if activitat.dataRealitzacio is not null %}
-										
-										<div class="separador_lloc">
-										{{ activitat.dataRealitzacio }}
-										</div>
-										
-				
-						{% else %}
-						
-										<div class="separador"></div>
-						
-						{% endif %}
-			{% endfor %}
-		
-</div>
+                {% endif %}
 
+                <div id="activitat_dreta">
+                    {% if activitat.document1Name %}
+                        <div class="categoria"><a rel='external'
+                                                  href='{{ vich_uploader_asset(activitat, 'document1') }}'
+                                                  target="_blank">
+                                <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}"
+                                     alt="icona descarrega" title="icona descarrega"/>
+                                {{ activitat.categoria }}</a></div>
+                        <h3 class="titol_activitat"><a rel='external'
+                                                       href='{{ vich_uploader_asset(activitat, 'document1') }}'
+                                                       target="_blank">{{ activitat.titol }}</a></h3>
+                    {% else %}
+                        <div class="categoria">
+                            {{ activitat.categoria }}
+                        </div>
+                        <h3 class="titol_activitat">{{ activitat.titol }}</h3>
+                    {% endif %}
+                    <div class="autor"> {{ activitat.autor }}</div>
+                </div>
+            </div>
+            <div class="descripcio activitat">{{ activitat.descripcio | raw }}</div>
+
+            {% if activitat.dataRealitzacio is not null %}
+                <div class="separador_lloc">
+                    {{ activitat.dataRealitzacio }}
+                </div>
+            {% else %}
+                <div class="separador"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

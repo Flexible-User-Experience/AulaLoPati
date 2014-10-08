@@ -1,29 +1,26 @@
 {% extends '::layout.html.twig' %}
 
 {% block title %}Presentació{% endblock %}
+
 {% block menu %}
-{% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'presentacio'} %}
+    {% include 'BlogBundle:Default:menu.html.twig' with {'menu': 'presentacio'} %}
 {% endblock %}
- {% block content %}
-<div id="presentacio">
-<h2 class="titol_jornada">{{ presentacio.titol }}</h2>
 
-
-     {{ presentacio.descripcio |raw }}
-
-    {% if presentacio.document1Name  %}
-
-         <div class="categoria"> <a rel='external' href='{{ vich_uploader_asset(presentacio, 'document1')  }}' target="_blank">
-        <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}" alt="icona descarrega" title="icona descarrega"/>
-        {{ presentacio.titolDocument1 }}</a></div>
-    {% endif %}
-
-     {% if presentacio.imageGran1Name  %}
-         <img src='{{ vich_uploader_asset(presentacio, 'imageGran1') | imagine_filter('imatge_pagina') }}' alt="L'Aula al Pati : Presentació {{ presentacio.titol }}"/>
-         <p class="peu_foto">{{ presentacio.peuImageGran1 }} </p>
-
-     {% endif %}
-
-</div>
- {% endblock %}
-
+{% block content %}
+    <div id="presentacio">
+        <h2 class="titol_jornada">{{ presentacio.titol }}</h2>
+        {{ presentacio.descripcio |raw }}
+        {% if presentacio.document1Name %}
+            <div class="categoria"><a rel='external' href='{{ vich_uploader_asset(presentacio, 'document1') }}'
+                                      target="_blank">
+                    <img class="icona_descarrega" src="{{ asset('images/icona-descarrega.png') }}"
+                         alt="icona descarrega" title="icona descarrega"/>
+                    {{ presentacio.titolDocument1 }}</a></div>
+        {% endif %}
+        {% if presentacio.imageGran1Name %}
+            <img src='{{ vich_uploader_asset(presentacio, 'imageGran1') | imagine_filter('imatge_pagina') }}'
+                 alt="L'Aula al Pati : Presentació {{ presentacio.titol }}"/>
+            <p class="peu_foto">{{ presentacio.peuImageGran1 }} </p>
+        {% endif %}
+    </div>
+{% endblock %}
