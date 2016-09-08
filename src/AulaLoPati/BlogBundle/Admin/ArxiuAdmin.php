@@ -13,7 +13,7 @@ class ArxiuAdmin extends AbstractAdmin
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper
-        ->with('General')
+        ->with('General', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
 		->add('titol', null, array('label' => 'Títol'))
 		->add('resum', 'textarea', array('label' => 'Resum','required'  => true, 'attr'=>(array('style'=>'height:160px; width:600px;'))))
 		->add('descripcio', 'textarea', array('attr' => array('class' => 'tinymce',
@@ -31,16 +31,16 @@ class ArxiuAdmin extends AbstractAdmin
 		//->add('video',null, array('required'=> FALSE))
 		->add('actiu', null, array('label' => 'Actiu ?','required'  => false))
         ->end()
-		->with('Imatge en miniatura')
+		->with('Imatge en miniatura', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
 		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
 		->end()
-		->with('Imatge principal')
+		->with('Imatge principal', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
 		->add('imageGran1', 'file', array('label' => 'Arxiu', 'required'=>false))
 		->add('imageGran1Name', null, array('label' => 'Nom', 'required'=>false, 'read_only'=>true,))
 		->add('peuImageGran1', null, array('label' => 'Peu imatge', 'required'=>false))
         ->end()
-		->with('Documents adjunts')
+		->with('Documents adjunts', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
 		->add('document1', 'file', array('label' => 'Arxiu 1', 'required'=>false))
 		->add('document1Name', null, array('label' => 'Nom 1', 'required'=>false, 'read_only'=>true,))
 		->add('titolDocument1', null, array('label' => 'Títol 1', 'required'=>false))
