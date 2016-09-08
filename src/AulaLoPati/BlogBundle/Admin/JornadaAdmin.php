@@ -2,18 +2,13 @@
 
 namespace AulaLoPati\BlogBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\PageBundle\Model\PageInterface;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-use Knp\Menu\ItemInterface as MenuItemInterface;
-use AulaLoPati\BlogBundle\Entity\Jornada;
-
-class JornadaAdmin extends Admin
+class JornadaAdmin extends AbstractAdmin
 {
     protected function configureRoutes(RouteCollection $collection)
     {
@@ -26,7 +21,7 @@ class JornadaAdmin extends Admin
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper
-
+        ->with('General')
 		->add('titol', null, array('label' => 'Títol'))
 		->add('resum', 'textarea', array('label' => 'Resum','required'  => true, 'attr'=>(array('style'=>'height:160px; width:600px;'))))
 		->add('descripcio', 'textarea', array('attr' => array('class' => 'tinymce',
@@ -55,10 +50,11 @@ class JornadaAdmin extends Admin
 		/*->add('imagePetita', 'file', array('data_class' => 'Symfony\Component\HttpFoundation\File\File',
 					'property_path' => 'imagePetita','required' => false))
 		->add('imagePetitaName',null,array('required' => false))*/
+		->end()
 		->with('Imatge en miniatura')
 		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
-		
+		->end()
 		->with('Imatge principal')
 		->add('imageGran1', 'file', array('label' => 'Arxiu', 'required'=>false))
 		->add('imageGran1Name', null, array('label' => 'Nom', 'required'=>false, 'read_only'=>true,))
@@ -78,6 +74,7 @@ class JornadaAdmin extends Admin
 
 	protected function configureListFields(ListMapper $mapper)
 	{
+        unset($this->listModes['mosaic']);
 		$mapper
 		//->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))

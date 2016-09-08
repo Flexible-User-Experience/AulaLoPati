@@ -12,3 +12,6 @@ parameters:
     locale: ca
     secret: 9118197c01dddcc43752b3136f2f10de8
     database_path: null
+    google_analytics_enabled: false
+    google_analytics_account: "UA-xxxxxxxx-x"
+    project_title: "Main Title"

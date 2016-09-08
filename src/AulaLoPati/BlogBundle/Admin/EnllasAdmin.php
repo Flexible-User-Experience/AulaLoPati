@@ -2,22 +2,18 @@
 
 namespace AulaLoPati\BlogBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\PageBundle\Model\PageInterface;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-use Knp\Menu\ItemInterface as MenuItemInterface;
-use AulaLoPati\BlogBundle\Entity\Jornada;
-
-class EnllasAdmin extends Admin
+class EnllasAdmin extends AbstractAdmin
 {
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper
+            ->with('General')
 		->add('titol', null, array('label' => 'Títol'))
 		//->add('resum', 'textarea', array('label' => 'Resum','required'  => false, 'attr'=>(array('style'=>'height:90px;'))))
 		->add('descripcio', 'textarea', array('attr' => array('class' => 'tinymce',
@@ -30,7 +26,7 @@ class EnllasAdmin extends Admin
 		->add('link','url',array('label'=>'Enllaç','required'=>true))
 		->add('ordre',null,array('required'=>true))
 		->add('actiu', null, array('label' => 'Actiu ?','required'  => false))
-
+        ->end()
 		->with('Imatge en miniatura')
 		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
@@ -48,6 +44,7 @@ class EnllasAdmin extends Admin
 
 	protected function configureListFields(ListMapper $mapper)
 	{
+        unset($this->listModes['mosaic']);
 		$mapper
 		//->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))

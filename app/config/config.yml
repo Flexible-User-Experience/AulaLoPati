@@ -29,6 +29,13 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+#    form_themes:
+#        - "bootstrap_3_layout.html.twig"
+    globals:
+        google_analytics_enabled: "%google_analytics_enabled%"
+        google_analytics_account: "%google_analytics_account%"
+        project_title:            "%project_title%"
+        admin_tag_version:        "1.0.02"
 
 # Assetic
 assetic:

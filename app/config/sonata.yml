@@ -1,21 +1,59 @@
 # Sonata Admin
 sonata_admin:
-  title:  "Administrador de l'Aula al Pati"
-  title_logo: /images/logo_lopati_inverted.png
-  templates:
-    layout: BlogBundle:Admin:my_standard_layout.html.twig
-    dashboard: SonataAdminBundle:Core:dashboard.html.twig
-    ajax: SonataAdminBundle::ajax_layout.html.twig
-    list: SonataAdminBundle:CRUD:list.html.twig
-    show: SonataAdminBundle:CRUD:show.html.twig
-    edit: SonataAdminBundle:CRUD:edit.html.twig
-  dashboard:
-    groups:
-      Presentació:
-      Jornades:
-      Projectes:
-      Convocatòries:
-      Recursos:
+    title:      "%project_title%"
+    title_logo: "/images/logo_lopati_inverted.png"
+    persist_filters: true
+    options:
+        html5_validate: true
+        confirm_exit:   true
+        use_select2:    true
+        pager_links:    10
+    templates:
+        layout: "BlogBundle:Admin:my_standard_layout.html.twig"
+    dashboard:
+        groups:
+            Presentacio:
+                icon:  "<i class='fa fa-info-circle' aria-hidden='true'></i>"
+                label: "Presentació"
+            Jornades:
+                icon:  "<i class='fa fa-pencil' aria-hidden='true'></i>"
+                label: "Jornades"
+            Projectes:
+                icon:  "<i class='fa fa-folder' aria-hidden='true'></i>"
+                label: "Projectes"
+            Convocatories:
+                icon:  "<i class='fa fa-calendar' aria-hidden='true'></i>"
+                label: "Convocatòries"
+            Recursos:
+                icon:  "<i class='fa fa-link' aria-hidden='true'></i>"
+                label: "Recursos"
+        blocks:
+            -
+                position: top
+                type: sonata.block.service.text
+                class: col-md-12
+                settings:
+                    content: >
+                        <h1 class="text-center" style="margin:0 0 25px 0">CMS %project_title%</h1>
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                class: col-md-6
+                settings:
+                    groups: [ Presentacio, Jornades, Projectes ]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                class: col-md-6
+                settings:
+                    groups: [ Convocatories, Recursos ]
+            -
+                position: bottom
+                type: sonata.block.service.text
+                class: col-md-12
+                settings:
+                    content: >
+                        <div><hr style="margin-top:40px;border-top:solid 1px #d2d6de"><p><i class="fa fa-info-circle"></i> Envia un correu <a href="mailto:suport@flux.cat?subject=Ajuda CMS Aula al Pati" style="color:#000;text-decoration:underline">aquí</a> per rebre suport tècnic.</p></div>
 
 # Sonata Block
 sonata_block:
@@ -30,27 +68,3 @@ sonata_block:
 sonata_user:
     security_acl: false
     manager_type: orm
-
-# Sonata FOS User Bundle
-#sonata_user:
-#    security_acl: true
-#    class:                  # Entity Classes
-#        user:               Application\Sonata\UserBundle\Entity\User
-#        group:              Application\Sonata\UserBundle\Entity\Group
-#    admin:                  # Admin Classes
-#        user:
-#            class:          Sonata\UserBundle\Admin\Entity\UserAdmin
-#            controller:     SonataAdminBundle:CRUD
-#            translation:    SonataUserBundle
-#        group:
-#            class:          Sonata\UserBundle\Admin\Entity\GroupAdmin
-#            controller:     SonataAdminBundle:CRUD
-#            translation:    SonataUserBundle
-#
-# FOS User Bundle
-#fos_user:
-#    db_driver:      orm # can be orm or odm
-#    firewall_name:  main
-#    user_class:     Application\Sonata\UserBundle\Entity\User
-#    group:
-#        group_class: Application\Sonata\UserBundle\Entity\Group
