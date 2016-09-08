@@ -1,21 +1,22 @@
 # Sonata Admin
 sonata_admin:
-  title:  "Administrador de l'Aula al Pati"
-  title_logo: /images/logo_lopati_inverted.png
-  templates:
-    layout: BlogBundle:Admin:my_standard_layout.html.twig
-    dashboard: SonataAdminBundle:Core:dashboard.html.twig
-    ajax: SonataAdminBundle::ajax_layout.html.twig
-    list: SonataAdminBundle:CRUD:list.html.twig
-    show: SonataAdminBundle:CRUD:show.html.twig
-    edit: SonataAdminBundle:CRUD:edit.html.twig
-  dashboard:
-    groups:
-      Presentació:
-      Jornades:
-      Projectes:
-      Convocatòries:
-      Recursos:
+    title:      "%project_title%"
+    title_logo: "/images/logo_lopati_inverted.png"
+    persist_filters: true
+    options:
+        html5_validate: true
+        confirm_exit:   true
+        use_select2:    true
+        pager_links:    10
+    templates:
+        layout: "BlogBundle:Admin:my_standard_layout.html.twig"
+    dashboard:
+        groups:
+            Presentacio:
+            Jornades:
+            Projectes:
+            Convocatories:
+            Recursos:
 
 # Sonata Block
 sonata_block:
@@ -30,27 +31,3 @@ sonata_block:
 sonata_user:
     security_acl: false
     manager_type: orm
-
-# Sonata FOS User Bundle
-#sonata_user:
-#    security_acl: true
-#    class:                  # Entity Classes
-#        user:               Application\Sonata\UserBundle\Entity\User
-#        group:              Application\Sonata\UserBundle\Entity\Group
-#    admin:                  # Admin Classes
-#        user:
-#            class:          Sonata\UserBundle\Admin\Entity\UserAdmin
-#            controller:     SonataAdminBundle:CRUD
-#            translation:    SonataUserBundle
-#        group:
-#            class:          Sonata\UserBundle\Admin\Entity\GroupAdmin
-#            controller:     SonataAdminBundle:CRUD
-#            translation:    SonataUserBundle
-#
-# FOS User Bundle
-#fos_user:
-#    db_driver:      orm # can be orm or odm
-#    firewall_name:  main
-#    user_class:     Application\Sonata\UserBundle\Entity\User
-#    group:
-#        group_class: Application\Sonata\UserBundle\Entity\Group
