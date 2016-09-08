@@ -1,0 +1,38 @@
+# Liip Imagine Bundle
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+    filter_sets:
+        cache: ~
+        imatge_pagina:
+            quality: 90
+            filters:
+                thumbnail: { size: [710,null], mode: outbound }
+        portada:
+            quality: 90
+            filters:
+                thumbnail: { size: [155,null], mode: outbound }
+        thumb_imatge_pagina:
+            quality: 70
+            filters:
+                thumbnail: { size: [155,null], mode: outbound }
+        thumb_imatge_pagina_arbre_continguts:
+            quality: 70
+            filters:
+                thumbnail: { size: [50,null], mode: outbound }
+
+# Vich Uploader
+vich_uploader:
+    db_driver: orm
+    mappings:
+        imatge:
+            uri_prefix: /uploads/images
+            upload_destination: "%kernel.root_dir%/../web/uploads/images"
+            inject_on_load: false
+            delete_on_remove: true
+        pdf:
+            uri_prefix: /uploads/documents
+            upload_destination: "%kernel.root_dir%/../web/uploads/documents"
+            inject_on_load: false
+            delete_on_remove: true

@@ -5,7 +5,6 @@ parameters:
     database_name: database        #change this
     database_user: user            #change this
     database_password: password    #change this
-    unix_socket:                   #path/to/mysql.sock
     mailer_transport: gmail
     mailer_host: localhost
     mailer_user: null
@@ -13,4 +12,3 @@ parameters:
     locale: ca
     secret: 9118197c01dddcc43752b3136f2f10de8
     database_path: null
-  
