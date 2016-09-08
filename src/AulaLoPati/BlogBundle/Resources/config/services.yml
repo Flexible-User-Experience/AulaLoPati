@@ -8,6 +8,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Presentacio
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
         
   sonata.aulalopati.admin.pagina:
     class: AulaLoPati\BlogBundle\Admin\JornadaAdmin

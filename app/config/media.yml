@@ -8,19 +8,24 @@ liip_imagine:
         imatge_pagina:
             quality: 90
             filters:
-                thumbnail: { size: [710,null], mode: outbound }
+                thumbnail: { size: [ 710, null ], mode: outbound }
         portada:
             quality: 90
             filters:
-                thumbnail: { size: [155,null], mode: outbound }
+                thumbnail: { size: [ 155, null ], mode: outbound }
         thumb_imatge_pagina:
             quality: 70
             filters:
-                thumbnail: { size: [155,null], mode: outbound }
+                thumbnail: { size: [ 155, null ], mode: outbound }
         thumb_imatge_pagina_arbre_continguts:
             quality: 70
             filters:
-                thumbnail: { size: [50,null], mode: outbound }
+                thumbnail: { size:  [50, null ], mode: outbound }
+        480xY:
+            quality: 90
+            filters:
+                auto_rotate: ~
+                thumbnail: { size: [ 480, null ], mode: outbound }
 
 # Vich Uploader
 vich_uploader:
