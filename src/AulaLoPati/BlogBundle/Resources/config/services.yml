@@ -61,7 +61,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Activitat
       - BlogBundle:Admin
-
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.categoria:
     class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
