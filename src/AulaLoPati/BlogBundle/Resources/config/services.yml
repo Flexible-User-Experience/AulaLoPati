@@ -3,7 +3,7 @@ services:
   sonata.aulalopati.admin.presentacio:
     class: AulaLoPati\BlogBundle\Admin\PresentacioAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Presentació, label: presentació }
+      - { name: sonata.admin, manager_type: orm, group: Presentacio, label: Presentació }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Presentacio
@@ -12,7 +12,7 @@ services:
   sonata.aulalopati.admin.pagina:
     class: AulaLoPati\BlogBundle\Admin\JornadaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Jornades, label: jornada }
+      - { name: sonata.admin, manager_type: orm, group: Jornades, label: Jornada }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Jornada
@@ -21,7 +21,7 @@ services:
   sonata.aulalopati.admin.arxiu:
     class: AulaLoPati\BlogBundle\Admin\ArxiuAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Convocatòries, label: convocatòria }
+      - { name: sonata.admin, manager_type: orm, group: Convocatories, label: Convocatòria }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Arxiu
@@ -30,7 +30,7 @@ services:
   sonata.aulalopati.admin.ponencia:
     class: AulaLoPati\BlogBundle\Admin\PonenciaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Jornades, label: ponencia }
+      - { name: sonata.admin, manager_type: orm, group: Jornades, label: Ponencia }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Ponencia
@@ -39,7 +39,7 @@ services:
   sonata.aulalopati.admin.projecte:
     class: AulaLoPati\BlogBundle\Admin\ProjecteAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Projectes, label: projecte }
+      - { name: sonata.admin, manager_type: orm, group: Projectes, label: Projecte }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Projecte
@@ -48,7 +48,7 @@ services:
   sonata.aulalopati.admin.activitat:
     class: AulaLoPati\BlogBundle\Admin\ActivitatAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Projectes, label: activitat }
+      - { name: sonata.admin, manager_type: orm, group: Projectes, label: Activitat }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Activitat
@@ -58,13 +58,13 @@ services:
   sonata.aulalopati.admin.categoria:
     class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Categories, label: categoria }
+      - { name: sonata.admin, manager_type: orm, group: Categories, label: Categoria }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Categoria
       - BlogBundle:Admin
 
-  sonata.aulalopati.admin.categoriaProjectes:
+  sonata.aulalopati.admin.categoria_projectes:
     class: AulaLoPati\BlogBundle\Admin\CategoriaProjectesAdmin
     tags:
       - { name: sonata.admin, manager_type: orm, group: Categories, label: categoriaProjectes }
@@ -76,7 +76,7 @@ services:
   sonata.aulalopati.admin.enllas:
     class: AulaLoPati\BlogBundle\Admin\EnllasAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: Recursos, label: recurs }
+      - { name: sonata.admin, manager_type: orm, group: Recursos, label: Recurs }
     arguments:
       - null
       - AulaLoPati\BlogBundle\Entity\Enllas

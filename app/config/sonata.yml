@@ -13,10 +13,47 @@ sonata_admin:
     dashboard:
         groups:
             Presentacio:
+                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                label: "Presentació"
             Jornades:
+                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                label: "Jornades"
             Projectes:
+                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                label: "Projectes"
             Convocatories:
+                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                label: "Convocatòries"
             Recursos:
+                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                label: "Recursos"
+        blocks:
+            -
+                position: top
+                type: sonata.block.service.text
+                class: col-md-12
+                settings:
+                    content: >
+                        <h1 class="text-center" style="margin:0 0 25px 0">CMS %project_title%</h1>
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                class: col-md-6
+                settings:
+                    groups: [ Presentacio, Jornades, Projectes ]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                class: col-md-6
+                settings:
+                    groups: [ Convocatories, Recursos ]
+            -
+                position: bottom
+                type: sonata.block.service.text
+                class: col-md-12
+                settings:
+                    content: >
+                        <div><hr style="margin-top:40px;border-top:solid 1px #d2d6de"><p><i class="fa fa-info-circle"></i> Envia un correu <a href="mailto:suport@flux.cat?subject=Ajuda CMS Aula al Pati" style="color:#000;text-decoration:underline">aquí</a> per rebre suport tècnic.</p></div>
 
 # Sonata Block
 sonata_block:
