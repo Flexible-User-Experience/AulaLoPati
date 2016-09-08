@@ -40,10 +40,18 @@ abstract class AbstractBaseAdmin extends AbstractAdmin
         $this->lis = $lis;
     }
 
-    protected function getImageHelperFormMapperWithThumbnail($minWidth = 1200)
+    protected function getImageHelperFormMapperWithThumbnail()
     {
         return ($this->getSubject() ? $this->getSubject()->getImageGran1Name() ? '<img src="' . $this->lis->getBrowserPath(
                 $this->vus->asset($this->getSubject(), 'imageGran1'),
+                '480xY'
+            ) . '" class="admin-preview img-responsive" alt="thumbnail"/>' : '' : '');
+    }
+
+    protected function getImageHelperFormMapperWithThumbnailSmall()
+    {
+        return ($this->getSubject() ? $this->getSubject()->getImagePetitaName() ? '<img src="' . $this->lis->getBrowserPath(
+                $this->vus->asset($this->getSubject(), 'imagePetita'),
                 '480xY'
             ) . '" class="admin-preview img-responsive" alt="thumbnail"/>' : '' : '');
     }
