@@ -2,22 +2,18 @@
 
 namespace AulaLoPati\BlogBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\PageBundle\Model\PageInterface;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-use Knp\Menu\ItemInterface as MenuItemInterface;
-use AulaLoPati\BlogBundle\Entity\Activiat;
-
-class ActivitatAdmin extends Admin
+class ActivitatAdmin extends AbstractAdmin
 {
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper
+        ->with('General')
 		->add('projecte')
 		->add('titol', null, array('label' => 'Títol'))
 		->add('categoria', 'sonata_type_model',array())
@@ -37,11 +33,11 @@ class ActivitatAdmin extends Admin
 		//->add('lloc', null, array('label' => 'Lloc'))
 		//->add('video',null, array('required'=> FALSE))
 		->add('actiu', null, array('label' => 'Actiu ?','required'  => false))
-
+        ->end()
 		->with('Imatge en miniatura')
 		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
-
+        ->end()
 		->with('Documents adjunts')
 		->add('document1', 'file', array('label' => 'Arxiu 1', 'required'=>false))
 		->add('document1Name', null, array('label' => 'Nom 1', 'required'=>false, 'read_only'=>true,))
@@ -60,6 +56,7 @@ class ActivitatAdmin extends Admin
 
 	protected function configureListFields(ListMapper $mapper)
 	{
+        unset($this->listModes['mosaic']);
 		$mapper
 		->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))

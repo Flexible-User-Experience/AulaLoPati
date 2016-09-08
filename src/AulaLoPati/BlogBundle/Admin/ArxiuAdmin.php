@@ -2,23 +2,18 @@
 
 namespace AulaLoPati\BlogBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\PageBundle\Model\PageInterface;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-use Knp\Menu\ItemInterface as MenuItemInterface;
-use AulaLoPati\BlogBundle\Entity\Arxiu;
-
-class ArxiuAdmin extends Admin
+class ArxiuAdmin extends AbstractAdmin
 {
 	protected function configureFormFields(FormMapper $formMapper)
 	{
 		$formMapper
-
+        ->with('General')
 		->add('titol', null, array('label' => 'Títol'))
 		->add('resum', 'textarea', array('label' => 'Resum','required'  => true, 'attr'=>(array('style'=>'height:160px; width:600px;'))))
 		->add('descripcio', 'textarea', array('attr' => array('class' => 'tinymce',
@@ -35,16 +30,16 @@ class ArxiuAdmin extends Admin
 		//->add('lloc', null, array('label' => 'Lloc'))
 		//->add('video',null, array('required'=> FALSE))
 		->add('actiu', null, array('label' => 'Actiu ?','required'  => false))
-
+        ->end()
 		->with('Imatge en miniatura')
 		->add('imagePetita', 'file', array('label' => 'Imatge en miniatura', 'required'=>false))
 		->add('imagePetitaName', null, array('label' => 'Nom', 'required' => false, 'read_only'=>true,))
-		
+		->end()
 		->with('Imatge principal')
 		->add('imageGran1', 'file', array('label' => 'Arxiu', 'required'=>false))
 		->add('imageGran1Name', null, array('label' => 'Nom', 'required'=>false, 'read_only'=>true,))
 		->add('peuImageGran1', null, array('label' => 'Peu imatge', 'required'=>false))
-		
+        ->end()
 		->with('Documents adjunts')
 		->add('document1', 'file', array('label' => 'Arxiu 1', 'required'=>false))
 		->add('document1Name', null, array('label' => 'Nom 1', 'required'=>false, 'read_only'=>true,))
@@ -61,6 +56,7 @@ class ArxiuAdmin extends Admin
 
 	protected function configureListFields(ListMapper $mapper)
 	{
+        unset($this->listModes['mosaic']);
 		$mapper
 		//->add('id')
 		->addIdentifier('titol', null, array('label' => 'Títol'))
