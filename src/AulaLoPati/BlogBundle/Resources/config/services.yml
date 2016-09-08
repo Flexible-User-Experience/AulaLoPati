@@ -39,6 +39,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Ponencia
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.projecte:
     class: AulaLoPati\BlogBundle\Admin\ProjecteAdmin
