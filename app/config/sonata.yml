@@ -13,19 +13,19 @@ sonata_admin:
     dashboard:
         groups:
             Presentacio:
-                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                icon:  "<i class='fa fa-info-circle' aria-hidden='true'></i>"
                 label: "Presentació"
             Jornades:
-                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                icon:  "<i class='fa fa-pencil' aria-hidden='true'></i>"
                 label: "Jornades"
             Projectes:
-                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                icon:  "<i class='fa fa-folder' aria-hidden='true'></i>"
                 label: "Projectes"
             Convocatories:
-                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                icon:  "<i class='fa fa-calendar' aria-hidden='true'></i>"
                 label: "Convocatòries"
             Recursos:
-                icon:  "<i class='fa fa-users' aria-hidden='true'></i>"
+                icon:  "<i class='fa fa-link' aria-hidden='true'></i>"
                 label: "Recursos"
         blocks:
             -
