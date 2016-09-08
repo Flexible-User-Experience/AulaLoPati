@@ -8,6 +8,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Presentacio
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
         
   sonata.aulalopati.admin.pagina:
     class: AulaLoPati\BlogBundle\Admin\JornadaAdmin
@@ -17,6 +19,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Jornada
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.arxiu:
     class: AulaLoPati\BlogBundle\Admin\ArxiuAdmin
@@ -26,6 +30,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Arxiu
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.ponencia:
     class: AulaLoPati\BlogBundle\Admin\PonenciaAdmin
@@ -35,6 +41,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Ponencia
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.projecte:
     class: AulaLoPati\BlogBundle\Admin\ProjecteAdmin
@@ -44,6 +52,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Projecte
       - BlogBundle:Admin
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.activitat:
     class: AulaLoPati\BlogBundle\Admin\ActivitatAdmin
@@ -53,7 +63,8 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Activitat
       - BlogBundle:Admin
-
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"
 
   sonata.aulalopati.admin.categoria:
     class: AulaLoPati\BlogBundle\Admin\CategoriaAdmin
@@ -81,8 +92,5 @@ services:
       - null
       - AulaLoPati\BlogBundle\Entity\Enllas
       - BlogBundle:Admin
-      
-      
-      
-      
- 
+      - "@vich_uploader.templating.helper.uploader_helper"
+      - "@liip_imagine.cache.manager"

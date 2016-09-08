@@ -19,6 +19,8 @@
 	</div>
 {% endblock %}
 
-{#{% block footer %}#}
-	{#{{ tinymce_init() }}#}
-{#{% endblock %}#}
+{# override javascript includes #}
+{% block javascripts %}
+	{{ parent() }}
+	{{ tinymce_init() }}
+{% endblock %}
